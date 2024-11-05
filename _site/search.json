@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to my project website for Statistical Programming Paradigms and Workflows. This page provides a comprehensive overview of the course and includes sections on various parts of the project.\n\n\n\n\n\nBackground\nPart 1\nPart 2\nPart 3\n\n\n\n\n\n**Guan Gui*\n\n\n\nOctober 24, 2024"
+  },
+  {
+    "objectID": "index.html#course",
+    "href": "index.html#course",
+    "title": "Home",
+    "section": "",
+    "text": "Background\nPart 1\nPart 2\nPart 3"
+  },
+  {
+    "objectID": "index.html#author",
+    "href": "index.html#author",
+    "title": "Home",
+    "section": "",
+    "text": "**Guan Gui*"
+  },
+  {
+    "objectID": "index.html#published",
+    "href": "index.html#published",
+    "title": "Home",
+    "section": "",
+    "text": "October 24, 2024"
+  },
+  {
+    "objectID": "part1.html",
+    "href": "part1.html",
+    "title": "Part 1",
+    "section": "",
+    "text": "Read this blogpost titled Building a brand as a scientist. Reflect on the questions in the “Defining your brand” section.\nWrite two paragraphs (4-6 sentences) max here answering one (or more) of the questions asked in the section."
+  },
+  {
+    "objectID": "part1.html#background",
+    "href": "part1.html#background",
+    "title": "Part 1",
+    "section": "",
+    "text": "Read this blogpost titled Building a brand as a scientist. Reflect on the questions in the “Defining your brand” section.\nWrite two paragraphs (4-6 sentences) max here answering one (or more) of the questions asked in the section."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a student at Johns Hopkins, studying biostatistics and honing my skills in data science and statistical programming. My background is rooted in data analysis, with a strong interest in statistical methodologies and command-line workflows.\n\n\n\nMy current focus is on statistical programming, command-line tools, and the development of websites for data presentation and analysis.\n\n\n\nOutside of academics, I enjoy [mention a hobby or interest here, optionally including a related photo if you’re comfortable sharing]."
+  },
+  {
+    "objectID": "about.html#who-i-am",
+    "href": "about.html#who-i-am",
+    "title": "About",
+    "section": "",
+    "text": "I am a student at Johns Hopkins, studying biostatistics and honing my skills in data science and statistical programming. My background is rooted in data analysis, with a strong interest in statistical methodologies and command-line workflows."
+  },
+  {
+    "objectID": "about.html#professional-interests",
+    "href": "about.html#professional-interests",
+    "title": "About",
+    "section": "",
+    "text": "My current focus is on statistical programming, command-line tools, and the development of websites for data presentation and analysis."
+  },
+  {
+    "objectID": "about.html#hobbies-and-interests",
+    "href": "about.html#hobbies-and-interests",
+    "title": "About",
+    "section": "",
+    "text": "Outside of academics, I enjoy [mention a hobby or interest here, optionally including a related photo if you’re comfortable sharing]."
+  },
+  {
+    "objectID": "example_analysis.html",
+    "href": "example_analysis.html",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "For this analysis, I’ve chosen the dataset [Insert dataset name and link here] to explore some data analysis techniques.\n\n\n\nThe primary question I aim to answer is [insert research question here]. This analysis is aimed at an audience interested in [describe audience].\n\n\n\nThe data comes from [link to dataset source]. A data dictionary is available at [link to data dictionary or include one below].\n\n\n\nUsing dplyr and tidyr, the data has been wrangled and cleaned.\n\n\n\nBelow are some visualizations created with ggplot2: 1. Plot 1 - [Describe plot] 2. Plot 2 - [Describe plot] 3. Plot 3 - [Describe plot with faceting]\n![Example image or table here]\n\nNote: This analysis references three sources, which can be found in the accompanying .bib file.\n\n\n\n\nIn conclusion, [summarize your findings here in 4-6 sentences].\n\n\n\ndplyr: [list functions]\ntidyr: [list functions]\nggplot2: [list functions]"
+  },
+  {
+    "objectID": "example_analysis.html#introduction",
+    "href": "example_analysis.html#introduction",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "For this analysis, I’ve chosen the dataset [Insert dataset name and link here] to explore some data analysis techniques."
+  },
+  {
+    "objectID": "example_analysis.html#objective",
+    "href": "example_analysis.html#objective",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "The primary question I aim to answer is [insert research question here]. This analysis is aimed at an audience interested in [describe audience]."
+  },
+  {
+    "objectID": "example_analysis.html#data-source",
+    "href": "example_analysis.html#data-source",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "The data comes from [link to dataset source]. A data dictionary is available at [link to data dictionary or include one below]."
+  },
+  {
+    "objectID": "example_analysis.html#data-wrangling",
+    "href": "example_analysis.html#data-wrangling",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "Using dplyr and tidyr, the data has been wrangled and cleaned."
+  },
+  {
+    "objectID": "example_analysis.html#analysis-and-visualization",
+    "href": "example_analysis.html#analysis-and-visualization",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "Below are some visualizations created with ggplot2: 1. Plot 1 - [Describe plot] 2. Plot 2 - [Describe plot] 3. Plot 3 - [Describe plot with faceting]\n![Example image or table here]\n\nNote: This analysis references three sources, which can be found in the accompanying .bib file."
+  },
+  {
+    "objectID": "example_analysis.html#summary",
+    "href": "example_analysis.html#summary",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "In conclusion, [summarize your findings here in 4-6 sentences].\n\n\n\ndplyr: [list functions]\ntidyr: [list functions]\nggplot2: [list functions]"
+  },
+  {
+    "objectID": "part3.html",
+    "href": "part3.html",
+    "title": "Part 3",
+    "section": "",
+    "text": "This section demonstrates basic command-line skills using a sample dataset students.csv.\n\n\nTo download the dataset, use the following command: ```bash wget https://example.com/students.csv"
+  },
+  {
+    "objectID": "part3.html#command-line-exercise",
+    "href": "part3.html#command-line-exercise",
+    "title": "Part 3",
+    "section": "",
+    "text": "This section demonstrates basic command-line skills using a sample dataset students.csv.\n\n\nTo download the dataset, use the following command: ```bash wget https://example.com/students.csv"
+  }
+]
