@@ -5,63 +5,65 @@ format: html
 
 # Guan Gui
 
-![Guan Gui's Photo](https://github.com/ggui6809/biostat777-intro-GuanGui.github.io/raw/main/images/photo.jpg)
-
+<img src="https://github.com/ggui6809/biostat777-intro-GuanGui.github.io/raw/main/images/photo.jpg" alt="Guan Gui's Photo" style="width:200px; border-radius:50%; display:block; margin-left:auto; margin-right:auto;">
 
 ## About Me
 
-Hello! I am Guan Gui, currently pursuing my ScM in Biostatistics at the Johns Hopkins Bloomberg School of Public Health. My work is driven by a strong passion for biostatistics, spatial genomics, and machine learning, with a focus on deriving insights from complex biomedical data.
+Hello! I am **Guan Gui**, a first-class honours graduate in Data Science from the University of Sydney, currently pursuing my **ScM in Biostatistics** at Johns Hopkins Bloomberg School of Public Health. My passion lies in biostatistics, spatial genomics, and machine learning, with a focus on extracting insights from complex biomedical data.
+
+---
 
 ## Education
 
 - **Master of Science in Biostatistics (ScM)**  
-  Johns Hopkins Bloomberg School of Public Health  
-  *2024 – Present*
+  *Johns Hopkins Bloomberg School of Public Health*  
+  2024 – Present
 
 - **Bachelor of Science (Honours) in Data Science**  
-  University of Sydney  
-  *2021 – 2024*  
+  *University of Sydney*  
+  2021 – 2024  
   Graduated with First Class Honours  
   *Awards*: Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship  
 
 - **Semester Exchange**  
-  National University of Singapore  
-  *Aug 2022 – Dec 2022*  
-  Completed core modules in statistical computing, programming methodology, and discrete mathematics.
+  *National University of Singapore*  
+  Aug 2022 – Dec 2022
 
 - **Summer & Winter Schools**  
-  Shanghai Jiao Tong University  
-  *2022 - 2023*  
-  Advanced coursework in time series analysis, statistical inference, and stochastic processes.
+  *Shanghai Jiao Tong University*  
+  2022 & 2023  
+
+---
 
 ## Research and Projects
 
 ### SpatialFeatures Project (Honours Thesis)
-Developed the "SpatialFeatures" algorithm to capture cellular-level features for spatial genomics, enabling insights into gene distributions at both super-cellular and sub-cellular levels. Created an R package to facilitate broader applications in spatial genomics.
+Developed the "SpatialFeatures" algorithm, capturing super-cellular and sub-cellular patterns in spatial genomics data. Created an R package for wide applications in genomics research.
 
-### Classification of Mouse Brain Cell Images
-Led a project utilizing deep learning models, specifically Vision Transformer (ViT), to classify frozen mouse brain cells. This project integrated advanced image processing and interactive Shiny apps, achieving top marks in my capstone course.
+### Classification of Mouse Brain Cells
+Applied Vision Transformer (ViT) deep learning models to classify frozen mouse brain cells, achieving high accuracy. This project included interactive features for users through a Shiny app.
 
-### Investigating Epidemic Spread in Networks
-Simulated disease spread in network models using the SIR framework, demonstrating the effects of network structure on infection dynamics and peak spread rates.
+### Epidemic Spread in Networks
+Simulated disease spread using network models with the SIR framework, providing insights into the dynamics of infection spread.
 
-### Predictive Modeling for Breast Cancer Diagnosis
-Applied machine learning techniques, including LDA and Random Forest, for breast cancer diagnosis, achieving high predictive accuracy through rigorous validation methods.
+### Breast Cancer Prediction Model
+Developed and validated machine learning models for breast cancer diagnosis, achieving high predictive accuracy through LDA and Random Forest.
 
-### Airbnb Price Prediction
-Built a machine learning ensemble model to predict Airbnb prices, employing SHAP for interpretability and Bayesian optimization for fine-tuning. Offered insights into key price influencers for Airbnb hosts and real estate investors.
+---
 
 ## Professional Experience
 
 - **Data Analyst Intern**  
   *DiAct Technology Co., Ltd. (Ipsos)*, Shanghai, China  
-  *Jan 2022 – May 2022*  
-  Analyzed automobile data from social media, improving data extraction efficiency by 30% through Python optimization, and developed insights on consumer trends for SAIC Volkswagen and Audi.
+  Jan 2022 – May 2022  
+  Improved data processing by 30% through Python optimization, and provided data insights for automotive brands like SAIC Volkswagen and Audi.
 
 - **User Growth Intern**  
   *JD.com*, Beijing, China  
-  *Jul 2021 – Sep 2021*  
-  Enhanced SQL procedures to optimize data processing, developed user behavior indicators, and improved recommendation algorithms for a more personalized user experience.
+  Jul 2021 – Sep 2021  
+  Enhanced SQL procedures and developed personalized user experience metrics, improving recommendation accuracy and efficiency.
+
+---
 
 ## Skills
 
@@ -69,6 +71,8 @@ Built a machine learning ensemble model to predict Airbnb prices, employing SHAP
 - **Tools**: Quarto, Jupyter, Git, Tableau
 - **Machine Learning**: TensorFlow, scikit-learn, ggplot2, dplyr, tidyr
 - **Languages**: Chinese (Native), English (Fluent)
+
+---
 
 ## Contact
 
