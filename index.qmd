@@ -5,7 +5,8 @@ format: html
 
 # Guan Gui
 
-![Guan Gui's Photo](https://github.com/ggui6809/biostat777-intro-GuanGui.github.io/blob/main/images/photo.jpg)
+![Guan Gui's Photo](https://github.com/ggui6809/biostat777-intro-GuanGui.github.io/raw/main/images/photo.jpg)
+
 
 ## About Me
 
