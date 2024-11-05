@@ -1,1 +1,47 @@
-/* css styles */
+/* Set a dark red background for the navbar */
+.navbar {
+  background-color: #800000 !important;
+}
+
+/* Dark red text for header elements */
+h1, h2, h3, h4, h5, h6 {
+  color: #800000;
+}
+
+/* Style links with dark red color */
+a {
+  color: #800000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #990000;
+  text-decoration: underline;
+}
+
+/* Button styles for email links or contact buttons */
+.email-button {
+  background-color: #800000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.email-button:hover {
+  background-color: #990000;
+}
+
+/* Adjust body text for readability */
+body {
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Optional: Dark red borders for images */
+img {
+  border: 3px solid #800000;
+  border-radius: 10px;
+}

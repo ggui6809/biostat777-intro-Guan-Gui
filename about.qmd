@@ -1,14 +1,53 @@
 ---
 title: "About"
+format: html
 ---
 
-# About
+# About Guan Gui
 
-## Who I Am
-I am a student at Johns Hopkins, studying biostatistics and honing my skills in data science and statistical programming. My background is rooted in data analysis, with a strong interest in statistical methodologies and command-line workflows.
+I am currently an ScM student in Biostatistics at Johns Hopkins Bloomberg School of Public Health, following my completion of a first-class honours degree in Data Science at the University of Sydney. My research interests span biostatistics, spatial genomics, and machine learning, with a focus on analyzing and deriving insights from complex data.
 
-## Professional Interests
-My current focus is on statistical programming, command-line tools, and the development of websites for data presentation and analysis.
+## Education
 
-## Hobbies and Interests
-Outside of academics, I enjoy [mention a hobby or interest here, optionally including a related photo if you’re comfortable sharing].
+- **Master of Science in Biostatistics (ScM)**  
+  Johns Hopkins Bloomberg School of Public Health  
+  *2024 – Present*
+
+- **Bachelor of Science (Honours) in Data Science**  
+  University of Sydney  
+  *2021 – 2024*  
+  Graduated with First Class Honours  
+  *Awards*: Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship  
+
+- **Semester Exchange**  
+  National University of Singapore  
+  *Aug 2022 – Dec 2022*
+
+- **Summer & Winter Schools**  
+  Shanghai Jiao Tong University  
+  2022 & 2023  
+
+## Research and Professional Experience
+
+- **SpatialFeatures Project**: Developed the "SpatialFeatures" algorithm to analyze spatial genomics data at cellular and sub-cellular levels, creating a versatile R package for use across genomics datasets.
+
+- **Data Analyst Intern**  
+  *DiAct Technology Co., Ltd. (Ipsos)*, Shanghai  
+  Analyzed social media data for automotive trends, improving data processing by 30% through Python optimizations.
+
+- **User Growth Intern**  
+  *JD.com*, Beijing  
+  Enhanced SQL processes and developed metrics for improved user engagement recommendations.
+
+## Skills
+
+- **Programming**: R, Python, SQL, SAS, Java, Tableau
+- **Languages**: Chinese (Native), English (Fluent)
+
+## Hobbies
+
+Outside of academics, I enjoy [mention a hobby, e.g., hiking, photography, etc.].
+
+---
+
+*Published on October 24, 2024*
