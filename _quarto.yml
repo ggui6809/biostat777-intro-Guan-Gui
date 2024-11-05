@@ -7,7 +7,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
+      - href: example_analysis.qmd
+        text: Example Analysis
+      - href: part1.qmd
+        text: Part 1
+      - href: part3.qmd
+        text: Part 3
 
 format:
   html:
@@ -16,4 +23,3 @@ format:
     toc: true
 
 editor: visual
-
