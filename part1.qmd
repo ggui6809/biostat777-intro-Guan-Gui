@@ -1,0 +1,13 @@
+---
+title: "Part 1"
+---
+
+# Part 1
+
+## Background
+Read this blogpost titled *Building a brand as a scientist*. Reflect on the questions in the “Defining your brand” section.
+
+Write two paragraphs (4-6 sentences) max here answering one (or more) of the questions asked in the section.
+
+## Reflections
+<!-- Add your reflections here -->

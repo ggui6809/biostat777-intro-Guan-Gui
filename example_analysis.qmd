@@ -1,0 +1,36 @@
+---
+title: "Example Analysis"
+format: html
+---
+
+# Example Analysis
+
+## Introduction
+For this analysis, I’ve chosen the dataset [Insert dataset name and link here] to explore some data analysis techniques.
+
+## Objective
+The primary question I aim to answer is [insert research question here]. This analysis is aimed at an audience interested in [describe audience].
+
+## Data Source
+The data comes from [link to dataset source]. A data dictionary is available at [link to data dictionary or include one below].
+
+## Data Wrangling
+Using `dplyr` and `tidyr`, the data has been wrangled and cleaned.
+
+## Analysis and Visualization
+Below are some visualizations created with `ggplot2`:
+1. **Plot 1** - [Describe plot]
+2. **Plot 2** - [Describe plot]
+3. **Plot 3** - [Describe plot with faceting]
+
+![Example image or table here]
+
+> **Note**: This analysis references three sources, which can be found in the accompanying `.bib` file.
+
+## Summary
+In conclusion, [summarize your findings here in 4-6 sentences].
+
+### Functions Used
+- `dplyr`: [list functions]
+- `tidyr`: [list functions]
+- `ggplot2`: [list functions]

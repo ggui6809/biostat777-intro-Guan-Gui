@@ -1,0 +1,15 @@
+---
+title: "Part 3"
+format: html
+---
+
+# Part 3
+
+## Command-Line Exercise
+
+This section demonstrates basic command-line skills using a sample dataset `students.csv`.
+
+### Download the File
+To download the dataset, use the following command:
+```bash
+wget https://example.com/students.csv

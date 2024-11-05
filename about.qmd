@@ -2,8 +2,13 @@
 title: "About"
 ---
 
-About this site
+# About
 
-```{r}
-1 + 1
-```
+## Who I Am
+I am a student at Johns Hopkins, studying biostatistics and honing my skills in data science and statistical programming. My background is rooted in data analysis, with a strong interest in statistical methodologies and command-line workflows.
+
+## Professional Interests
+My current focus is on statistical programming, command-line tools, and the development of websites for data presentation and analysis.
+
+## Hobbies and Interests
+Outside of academics, I enjoy [mention a hobby or interest here, optionally including a related photo if you’re comfortable sharing].

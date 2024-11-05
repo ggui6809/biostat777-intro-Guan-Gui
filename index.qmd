@@ -1,11 +1,20 @@
 ---
-title: "biostat777-intro-GuanGui.github.io"
+title: "Home"
 ---
 
-This is a Quarto website.
+# Statistical Programming Paradigms and Workflows
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Welcome to my project website for **Statistical Programming Paradigms and Workflows**. This page provides a comprehensive overview of the course and includes sections on various parts of the project.
 
-```{r}
-1 + 1
-```
+## Course
+### Resources
+- Background
+- Part 1
+- Part 2
+- Part 3
+
+## Author
+**Guan Gui*  
+
+## Published
+October 24, 2024
