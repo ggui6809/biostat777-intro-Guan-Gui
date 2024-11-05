@@ -81,76 +81,41 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I am a student at Johns Hopkins, studying biostatistics and honing my skills in data science and statistical programming. My background is rooted in data analysis, with a strong interest in statistical methodologies and command-line workflows.\n\n\n\nMy current focus is on statistical programming, command-line tools, and the development of websites for data presentation and analysis.\n\n\n\nOutside of academics, I enjoy [mention a hobby or interest here, optionally including a related photo if you’re comfortable sharing]."
+    "text": "I am currently an ScM student in Biostatistics at Johns Hopkins Bloomberg School of Public Health, following my completion of a first-class honours degree in Data Science at the University of Sydney. My research interests span biostatistics, spatial genomics, and machine learning, with a focus on analyzing and deriving insights from complex data.\n\n\n\nMaster of Science in Biostatistics (ScM)\nJohns Hopkins Bloomberg School of Public Health\n2024 – Present\nBachelor of Science (Honours) in Data Science\nUniversity of Sydney\n2021 – 2024\nGraduated with First Class Honours\nAwards: Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship\nSemester Exchange\nNational University of Singapore\nAug 2022 – Dec 2022\nSummer & Winter Schools\nShanghai Jiao Tong University\n2022 & 2023\n\n\n\n\n\nSpatialFeatures Project: Developed the “SpatialFeatures” algorithm to analyze spatial genomics data at cellular and sub-cellular levels, creating a versatile R package for use across genomics datasets.\nData Analyst Intern\nDiAct Technology Co., Ltd. (Ipsos), Shanghai\nAnalyzed social media data for automotive trends, improving data processing by 30% through Python optimizations.\nUser Growth Intern\nJD.com, Beijing\nEnhanced SQL processes and developed metrics for improved user engagement recommendations.\n\n\n\n\n\nProgramming: R, Python, SQL, SAS, Java, Tableau\nLanguages: Chinese (Native), English (Fluent)\n\n\n\n\nOutside of academics, I enjoy [mention a hobby, e.g., hiking, photography, etc.].\n\nPublished on October 24, 2024"
   },
   {
-    "objectID": "about.html#who-i-am",
-    "href": "about.html#who-i-am",
+    "objectID": "about.html#education",
+    "href": "about.html#education",
     "title": "About",
-    "section": "",
-    "text": "I am a student at Johns Hopkins, studying biostatistics and honing my skills in data science and statistical programming. My background is rooted in data analysis, with a strong interest in statistical methodologies and command-line workflows."
-  },
-  {
-    "objectID": "about.html#professional-interests",
-    "href": "about.html#professional-interests",
-    "title": "About",
-    "section": "",
-    "text": "My current focus is on statistical programming, command-line tools, and the development of websites for data presentation and analysis."
-  },
-  {
-    "objectID": "about.html#hobbies-and-interests",
-    "href": "about.html#hobbies-and-interests",
-    "title": "About",
-    "section": "",
-    "text": "Outside of academics, I enjoy [mention a hobby or interest here, optionally including a related photo if you’re comfortable sharing]."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Hello! I am Guan Gui, a first-class honours graduate in Data Science from the University of Sydney, currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. My passion lies in biostatistics, spatial genomics, and machine learning, with a focus on extracting insights from complex biomedical data.\n\n\n\n\n\nMaster of Science in Biostatistics (ScM)\nJohns Hopkins Bloomberg School of Public Health\n2024 – Present\nBachelor of Science (Honours) in Data Science\nUniversity of Sydney\n2021 – 2024\nGraduated with First Class Honours\nAwards: Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship\nSemester Exchange\nNational University of Singapore\nAug 2022 – Dec 2022\nSummer & Winter Schools\nShanghai Jiao Tong University\n2022 & 2023\n\n\n\n\n\n\n\nDeveloped the “SpatialFeatures” algorithm, capturing super-cellular and sub-cellular patterns in spatial genomics data. Created an R package for wide applications in genomics research.\n\n\n\nApplied Vision Transformer (ViT) deep learning models to classify frozen mouse brain cells, achieving high accuracy. This project included interactive features for users through a Shiny app.\n\n\n\nSimulated disease spread using network models with the SIR framework, providing insights into the dynamics of infection spread.\n\n\n\nDeveloped and validated machine learning models for breast cancer diagnosis, achieving high predictive accuracy through LDA and Random Forest.\n\n\n\n\n\n\nData Analyst Intern\nDiAct Technology Co., Ltd. (Ipsos), Shanghai, China\nJan 2022 – May 2022\nImproved data processing by 30% through Python optimization, and provided data insights for automotive brands like SAIC Volkswagen and Audi.\nUser Growth Intern\nJD.com, Beijing, China\nJul 2021 – Sep 2021\nEnhanced SQL procedures and developed personalized user experience metrics, improving recommendation accuracy and efficiency.\n\n\n\n\n\n\nProgramming: R, Python, SQL, SAS, Java\nTools: Quarto, Jupyter, Git, Tableau\nMachine Learning: TensorFlow, scikit-learn, ggplot2, dplyr, tidyr\nLanguages: Chinese (Native), English (Fluent)\n\n\n\n\n\nFeel free to reach out to me at ggui2@jh.edu.\n\nPublished on October 24, 2024"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Home",
-    "section": "",
-    "text": "Hello! I am Guan Gui, a first-class honours graduate in Data Science from the University of Sydney, currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. My passion lies in biostatistics, spatial genomics, and machine learning, with a focus on extracting insights from complex biomedical data."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Home",
     "section": "",
     "text": "Master of Science in Biostatistics (ScM)\nJohns Hopkins Bloomberg School of Public Health\n2024 – Present\nBachelor of Science (Honours) in Data Science\nUniversity of Sydney\n2021 – 2024\nGraduated with First Class Honours\nAwards: Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship\nSemester Exchange\nNational University of Singapore\nAug 2022 – Dec 2022\nSummer & Winter Schools\nShanghai Jiao Tong University\n2022 & 2023"
   },
   {
-    "objectID": "index.html#research-and-projects",
-    "href": "index.html#research-and-projects",
-    "title": "Home",
+    "objectID": "about.html#research-and-professional-experience",
+    "href": "about.html#research-and-professional-experience",
+    "title": "About",
     "section": "",
-    "text": "Developed the “SpatialFeatures” algorithm, capturing super-cellular and sub-cellular patterns in spatial genomics data. Created an R package for wide applications in genomics research.\n\n\n\nApplied Vision Transformer (ViT) deep learning models to classify frozen mouse brain cells, achieving high accuracy. This project included interactive features for users through a Shiny app.\n\n\n\nSimulated disease spread using network models with the SIR framework, providing insights into the dynamics of infection spread.\n\n\n\nDeveloped and validated machine learning models for breast cancer diagnosis, achieving high predictive accuracy through LDA and Random Forest."
+    "text": "SpatialFeatures Project: Developed the “SpatialFeatures” algorithm to analyze spatial genomics data at cellular and sub-cellular levels, creating a versatile R package for use across genomics datasets.\nData Analyst Intern\nDiAct Technology Co., Ltd. (Ipsos), Shanghai\nAnalyzed social media data for automotive trends, improving data processing by 30% through Python optimizations.\nUser Growth Intern\nJD.com, Beijing\nEnhanced SQL processes and developed metrics for improved user engagement recommendations."
   },
   {
-    "objectID": "index.html#professional-experience",
-    "href": "index.html#professional-experience",
-    "title": "Home",
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About",
     "section": "",
-    "text": "Data Analyst Intern\nDiAct Technology Co., Ltd. (Ipsos), Shanghai, China\nJan 2022 – May 2022\nImproved data processing by 30% through Python optimization, and provided data insights for automotive brands like SAIC Volkswagen and Audi.\nUser Growth Intern\nJD.com, Beijing, China\nJul 2021 – Sep 2021\nEnhanced SQL procedures and developed personalized user experience metrics, improving recommendation accuracy and efficiency."
+    "text": "Programming: R, Python, SQL, SAS, Java, Tableau\nLanguages: Chinese (Native), English (Fluent)"
   },
   {
-    "objectID": "index.html#skills",
-    "href": "index.html#skills",
-    "title": "Home",
+    "objectID": "about.html#hobbies",
+    "href": "about.html#hobbies",
+    "title": "About",
     "section": "",
-    "text": "Programming: R, Python, SQL, SAS, Java\nTools: Quarto, Jupyter, Git, Tableau\nMachine Learning: TensorFlow, scikit-learn, ggplot2, dplyr, tidyr\nLanguages: Chinese (Native), English (Fluent)"
+    "text": "Outside of academics, I enjoy [mention a hobby, e.g., hiking, photography, etc.].\n\nPublished on October 24, 2024"
   },
   {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Home",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guan Gui",
     "section": "",
-    "text": "Feel free to reach out to me at ggui2@jh.edu.\n\nPublished on October 24, 2024"
+    "text": "Hello! I am Guan Gui, a data scientist and biostatistics student with a passion for uncovering insights from complex biomedical data. I hold a first-class honours degree in Data Science from the University of Sydney and am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health."
   }
 ]
