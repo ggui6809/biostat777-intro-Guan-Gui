@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Guan Gui",
     "section": "",
-    "text": "Hello! I am Guan Gui, a data scientist and biostatistics student with a passion for uncovering insights from complex biomedical data. I hold a first-class honours degree in Data Science from the University of Sydney and am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health."
+    "text": "Hello! I am Guan Gui, a data science and biostatistics student with a passion for uncovering insights from complex biomedical data. I am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health."
   },
   {
     "objectID": "index.html#course",
@@ -30,9 +30,9 @@
   {
     "objectID": "part1.html",
     "href": "part1.html",
-    "title": "Part 1",
+    "title": "Part 1: Defining My Scientific Brand",
     "section": "",
-    "text": "Read this blogpost titled Building a brand as a scientist. Reflect on the questions in the “Defining your brand” section.\nWrite two paragraphs (4-6 sentences) max here answering one (or more) of the questions asked in the section."
+    "text": "I am Guan Gui, a first-class honors graduate in Data Science from the University of Sydney, currently pursuing my ScM in Biostatistics at Johns Hopkins University. I have a keen sensitivity to data and extensive experience in data analysis, with a strong passion for biomedical data, especially in the field of spatial genomics.\n\n\n\nI am dedicated to uncovering new insights from biomedical data, particularly in cancer and neurodegenerative disease research. By developing R packages, my aim is to create innovative tools and publish research that offer fresh perspectives on data, enabling new discoveries and making a meaningful impact on the medical and scientific community.\n\n\n\nBased on my experience, my primary audience consists of fellow researchers working in similar fields. I develop open-source R packages that extract new features from spatial genomics data, aiming to provide unique insights for this type of data. As open-source software, my work is accessible for others to use, improve, or benchmark against, fostering collaboration and progress within the field.\n\n\n\nMy motivation stems from my family, who have been affected by cancer and neurodegenerative diseases, inspiring me to contribute to advancements in disease research. My SpatialFeatures package has been submitted to Bioconductor and received a high distinction grade as my honors project. I can spend countless hours on data analysis projects that intrigue me, thoroughly enjoying the process of discovering new insights step by step. In the next five to ten years, I hope to pursue a PhD with meaningful contributions, graduate successfully, and secure a position in biomedical data science that allows me to continue working on impactful projects."
   },
   {
     "objectID": "part1.html#background",
@@ -121,9 +121,9 @@
   {
     "objectID": "part3.html",
     "href": "part3.html",
-    "title": "Part 3",
+    "title": "Part 3: Command Line Operations on students.csv",
     "section": "",
-    "text": "This section demonstrates basic command-line skills using a sample dataset students.csv.\n\n\nTo download the dataset, use the following command: ```bash wget https://example.com/students.csv"
+    "text": "To download the students.csv file from the provided GitHub URL, use the wget command:\nwhich wget\nrm -f students.csv\n/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv\n\n\n\ncat students.csv\n\n\n\nhead -n 5 students.csv\n\n\n\ntail -n 3 students.csv\n\n\n\nwc -l students.csv\n\n\n\ngrep \"Math\" students.csv\n\n\n\nUsing grep:\ngrep \",F,\" students.csv\nAlternatively, using awk:\nawk -F \",\" '$4 == \"F\"' students.csv\n\n\n\nsort -t \",\" -k3,3n students.csv\n\n\n\ncut -d \",\" -f6 students.csv | sort | uniq\n\n\n\nawk -F \",\" '{sum+=$5} END {print \"Average Grade:\", sum/(NR-1)}' students.csv\n\n\n\nTo make an in-place replacement:\nsed -i '' 's/Math/Mathematics/g' students.csv\n\n\n\ncat students.csv"
   },
   {
     "objectID": "part3.html#command-line-exercise",
@@ -201,5 +201,40 @@
     "title": "About",
     "section": "",
     "text": "Outside of academics, I enjoy [mention a hobby, e.g., hiking, photography, etc.].\n\nPublished on October 24, 2024"
+  },
+  {
+    "objectID": "part1.html#who-am-i-what-makes-me-special",
+    "href": "part1.html#who-am-i-what-makes-me-special",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "I am Guan Gui, a first-class honors graduate in Data Science from the University of Sydney, currently pursuing my ScM in Biostatistics at Johns Hopkins University. I have a keen sensitivity to data and extensive experience in data analysis, with a strong passion for biomedical data, especially in the field of spatial genomics."
+  },
+  {
+    "objectID": "part1.html#what-do-i-stand-for",
+    "href": "part1.html#what-do-i-stand-for",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "I am dedicated to uncovering new insights from biomedical data, particularly in cancer and neurodegenerative disease research. By developing R packages, my aim is to create innovative tools and publish research that offer fresh perspectives on data, enabling new discoveries and making a meaningful impact on the medical and scientific community."
+  },
+  {
+    "objectID": "part1.html#who-is-my-audience",
+    "href": "part1.html#who-is-my-audience",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "Based on my experience, my primary audience consists of fellow researchers working in similar fields. I develop open-source R packages that extract new features from spatial genomics data, aiming to provide unique insights for this type of data. As open-source software, my work is accessible for others to use, improve, or benchmark against, fostering collaboration and progress within the field."
+  },
+  {
+    "objectID": "part1.html#what-is-my-goal",
+    "href": "part1.html#what-is-my-goal",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "My motivation stems from my family, who have been affected by cancer and neurodegenerative diseases, inspiring me to contribute to advancements in disease research. My SpatialFeatures package has been submitted to Bioconductor and received a high distinction grade as my honors project. I can spend countless hours on data analysis projects that intrigue me, thoroughly enjoying the process of discovering new insights step by step. In the next five to ten years, I hope to pursue a PhD with meaningful contributions, graduate successfully, and secure a position in biomedical data science that allows me to continue working on impactful projects."
+  },
+  {
+    "objectID": "part3.html#command-line-solutions",
+    "href": "part3.html#command-line-solutions",
+    "title": "Part 3: Command Line Operations on students.csv",
+    "section": "",
+    "text": "To download the students.csv file from the provided GitHub URL, use the wget command:\nwhich wget\nrm -f students.csv\n/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv\n\n\n\ncat students.csv\n\n\n\nhead -n 5 students.csv\n\n\n\ntail -n 3 students.csv\n\n\n\nwc -l students.csv\n\n\n\ngrep \"Math\" students.csv\n\n\n\nUsing grep:\ngrep \",F,\" students.csv\nAlternatively, using awk:\nawk -F \",\" '$4 == \"F\"' students.csv\n\n\n\nsort -t \",\" -k3,3n students.csv\n\n\n\ncut -d \",\" -f6 students.csv | sort | uniq\n\n\n\nawk -F \",\" '{sum+=$5} END {print \"Average Grade:\", sum/(NR-1)}' students.csv\n\n\n\nTo make an in-place replacement:\nsed -i '' 's/Math/Mathematics/g' students.csv\n\n\n\ncat students.csv"
   }
 ]

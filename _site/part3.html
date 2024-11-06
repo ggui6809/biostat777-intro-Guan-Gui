@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Guan Gui">
 
-<title>biostat777-intro-GuanGui.github.io - Part 3</title>
+<title>biostat777-intro-GuanGui - Part 3: Command Line Operations on students.csv</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,10 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">biostat777-intro-GuanGui.github.io</span>
+    <span class="navbar-title">biostat777-intro-GuanGui</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -102,21 +105,22 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./part1.html"> 
-<span class="menu-text">Part 1</span></a>
+<span class="menu-text">Defining My Scientific Brand</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./part3.html" aria-current="page"> 
-<span class="menu-text">Part 3</span></a>
+<span class="menu-text">Command Line Operations</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -124,28 +128,42 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link active" data-scroll-target="#part-3">Part 3</a>
+  <li><a href="#command-line-solutions" id="toc-command-line-solutions" class="nav-link active" data-scroll-target="#command-line-solutions">Command Line Solutions</a>
   <ul class="collapse">
-  <li><a href="#command-line-exercise" id="toc-command-line-exercise" class="nav-link" data-scroll-target="#command-line-exercise">Command-Line Exercise</a>
-  <ul class="collapse">
-  <li><a href="#download-the-file" id="toc-download-the-file" class="nav-link" data-scroll-target="#download-the-file">Download the File</a></li>
-  </ul></li>
+  <li><a href="#download-the-students.csv-file" id="toc-download-the-students.csv-file" class="nav-link" data-scroll-target="#download-the-students.csv-file">1. Download the <code>students.csv</code> file</a></li>
+  <li><a href="#display-the-contents-of-the-students.csv-file-using-the-cat-command" id="toc-display-the-contents-of-the-students.csv-file-using-the-cat-command" class="nav-link" data-scroll-target="#display-the-contents-of-the-students.csv-file-using-the-cat-command">2. Display the contents of the <code>students.csv</code> file using the <code>cat</code> command</a></li>
+  <li><a href="#display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines" id="toc-display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines" class="nav-link" data-scroll-target="#display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines">3. Display only the first 5 lines of the file using <code>head</code> to show the first few lines</a></li>
+  <li><a href="#display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines" id="toc-display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines" class="nav-link" data-scroll-target="#display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines">4. Display only the last 3 lines of the file using <code>tail</code> to show the last few lines</a></li>
+  <li><a href="#count-the-number-of-lines-in-the-file-using-the-wc-command" id="toc-count-the-number-of-lines-in-the-file-using-the-wc-command" class="nav-link" data-scroll-target="#count-the-number-of-lines-in-the-file-using-the-wc-command">5. Count the number of lines in the file using the <code>wc</code> command</a></li>
+  <li><a href="#find-all-students-who-are-taking-math-as-a-subject-using-grep" id="toc-find-all-students-who-are-taking-math-as-a-subject-using-grep" class="nav-link" data-scroll-target="#find-all-students-who-are-taking-math-as-a-subject-using-grep">6. Find all students who are taking “Math” as a subject using <code>grep</code></a></li>
+  <li><a href="#find-all-female-students-using-grep-or-awk-to-filter-based-on-gender" id="toc-find-all-female-students-using-grep-or-awk-to-filter-based-on-gender" class="nav-link" data-scroll-target="#find-all-female-students-using-grep-or-awk-to-filter-based-on-gender">7. Find all female students using <code>grep</code> or <code>awk</code> to filter based on gender</a></li>
+  <li><a href="#sort-the-file-by-the-students-ages-in-ascending-order-using-sort" id="toc-sort-the-file-by-the-students-ages-in-ascending-order-using-sort" class="nav-link" data-scroll-target="#sort-the-file-by-the-students-ages-in-ascending-order-using-sort">8. Sort the file by the students’ ages in ascending order using <code>sort</code></a></li>
+  <li><a href="#find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq" id="toc-find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq" class="nav-link" data-scroll-target="#find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq">9. Find the unique subjects listed in the file using <code>cut</code>, <code>sort</code>, and <code>uniq</code></a></li>
+  <li><a href="#calculate-the-average-grade-of-the-students-using-awk" id="toc-calculate-the-average-grade-of-the-students-using-awk" class="nav-link" data-scroll-target="#calculate-the-average-grade-of-the-students-using-awk">10. Calculate the average grade of the students using <code>awk</code></a></li>
+  <li><a href="#replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed" id="toc-replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed" class="nav-link" data-scroll-target="#replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed">11. Replace all occurrences of “Math” with “Mathematics” in the file using <code>sed</code></a></li>
+  <li><a href="#display-the-final-students.csv-file" id="toc-display-the-final-students.csv-file" class="nav-link" data-scroll-target="#display-the-final-students.csv-file">12. Display the final <code>students.csv</code> file</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Part 3</h1>
+<h1 class="title">Part 3: Command Line Operations on students.csv</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Guan Gui </p>
+          </div>
+  </div>
     
   
     
@@ -156,17 +174,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="part-3" class="level1">
-<h1>Part 3</h1>
-<section id="command-line-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="command-line-exercise">Command-Line Exercise</h2>
-<p>This section demonstrates basic command-line skills using a sample dataset <code>students.csv</code>.</p>
-<section id="download-the-file" class="level3">
-<h3 class="anchored" data-anchor-id="download-the-file">Download the File</h3>
-<p>To download the dataset, use the following command: ```bash wget https://example.com/students.csv</p>
-
-
+<section id="command-line-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-solutions">Command Line Solutions</h2>
+<section id="download-the-students.csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="download-the-students.csv-file">1. Download the <code>students.csv</code> file</h3>
+<p>To download the <code>students.csv</code> file from the provided GitHub URL, use the <code>wget</code> command:</p>
+<pre class="{bash}"><code>which wget
+rm -f students.csv
+/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv</code></pre>
 </section>
+<section id="display-the-contents-of-the-students.csv-file-using-the-cat-command" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-contents-of-the-students.csv-file-using-the-cat-command">2. Display the contents of the <code>students.csv</code> file using the <code>cat</code> command</h3>
+<pre class="{bash}"><code>cat students.csv</code></pre>
+</section>
+<section id="display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines" class="level3">
+<h3 class="anchored" data-anchor-id="display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines">3. Display only the first 5 lines of the file using <code>head</code> to show the first few lines</h3>
+<pre class="{bash}"><code>head -n 5 students.csv</code></pre>
+</section>
+<section id="display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines" class="level3">
+<h3 class="anchored" data-anchor-id="display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines">4. Display only the last 3 lines of the file using <code>tail</code> to show the last few lines</h3>
+<pre class="{bash}"><code>tail -n 3 students.csv</code></pre>
+</section>
+<section id="count-the-number-of-lines-in-the-file-using-the-wc-command" class="level3">
+<h3 class="anchored" data-anchor-id="count-the-number-of-lines-in-the-file-using-the-wc-command">5. Count the number of lines in the file using the <code>wc</code> command</h3>
+<pre class="{bash}"><code>wc -l students.csv</code></pre>
+</section>
+<section id="find-all-students-who-are-taking-math-as-a-subject-using-grep" class="level3">
+<h3 class="anchored" data-anchor-id="find-all-students-who-are-taking-math-as-a-subject-using-grep">6. Find all students who are taking “Math” as a subject using <code>grep</code></h3>
+<pre class="{bash}"><code>grep "Math" students.csv</code></pre>
+</section>
+<section id="find-all-female-students-using-grep-or-awk-to-filter-based-on-gender" class="level3">
+<h3 class="anchored" data-anchor-id="find-all-female-students-using-grep-or-awk-to-filter-based-on-gender">7. Find all female students using <code>grep</code> or <code>awk</code> to filter based on gender</h3>
+<p>Using <code>grep</code>:</p>
+<pre class="{bash}"><code>grep ",F," students.csv</code></pre>
+<p>Alternatively, using <code>awk</code>:</p>
+<pre class="{bash}"><code>awk -F "," '$4 == "F"' students.csv</code></pre>
+</section>
+<section id="sort-the-file-by-the-students-ages-in-ascending-order-using-sort" class="level3">
+<h3 class="anchored" data-anchor-id="sort-the-file-by-the-students-ages-in-ascending-order-using-sort">8. Sort the file by the students’ ages in ascending order using <code>sort</code></h3>
+<pre class="{bash}"><code>sort -t "," -k3,3n students.csv</code></pre>
+</section>
+<section id="find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq" class="level3">
+<h3 class="anchored" data-anchor-id="find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq">9. Find the unique subjects listed in the file using <code>cut</code>, <code>sort</code>, and <code>uniq</code></h3>
+<pre class="{bash}"><code>cut -d "," -f6 students.csv | sort | uniq</code></pre>
+</section>
+<section id="calculate-the-average-grade-of-the-students-using-awk" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-the-average-grade-of-the-students-using-awk">10. Calculate the average grade of the students using <code>awk</code></h3>
+<pre class="{bash}"><code>awk -F "," '{sum+=$5} END {print "Average Grade:", sum/(NR-1)}' students.csv</code></pre>
+</section>
+<section id="replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed" class="level3">
+<h3 class="anchored" data-anchor-id="replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed">11. Replace all occurrences of “Math” with “Mathematics” in the file using <code>sed</code></h3>
+<p>To make an in-place replacement:</p>
+<pre class="{bash}"><code>sed -i '' 's/Math/Mathematics/g' students.csv</code></pre>
+</section>
+<section id="display-the-final-students.csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-final-students.csv-file">12. Display the final <code>students.csv</code> file</h3>
+<pre class="{bash}"><code>cat students.csv</code></pre>
+
+
 </section>
 </section>
 
@@ -191,6 +256,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

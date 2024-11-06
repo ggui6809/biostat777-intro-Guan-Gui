@@ -15,4 +15,4 @@ about:
       href: mailto:ggui2@jh.edu
 ---
 
-Hello! I am Guan Gui, a data scientist and biostatistics student with a passion for uncovering insights from complex biomedical data. I hold a first-class honours degree in Data Science from the University of Sydney and am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health.
+Hello! I am Guan Gui, a data science and biostatistics student with a passion for uncovering insights from complex biomedical data. I am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health.
