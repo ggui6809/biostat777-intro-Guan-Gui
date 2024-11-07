@@ -27,6 +27,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libglpk-dev
 
+      - name: Install Python Dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install jupyter nbformat
+
       - name: Install R Dependencies
         run: |
           Rscript -e 'install.packages("renv"); renv::restore(prompt = FALSE)'
