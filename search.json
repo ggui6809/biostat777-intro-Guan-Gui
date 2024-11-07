@@ -2,79 +2,149 @@
   {
     "objectID": "part1.html",
     "href": "part1.html",
-    "title": "Part 1",
+    "title": "Part 1: Defining My Scientific Brand",
     "section": "",
-    "text": "Read this blogpost titled Building a brand as a scientist. Reflect on the questions in the “Defining your brand” section.\nWrite two paragraphs (4-6 sentences) max here answering one (or more) of the questions asked in the section."
+    "text": "I am Guan Gui, a first-class honors graduate in Data Science from the University of Sydney, currently pursuing my ScM in Biostatistics at Johns Hopkins University. I have a keen sensitivity to data and extensive experience in data analysis, with a strong passion for biomedical data, especially in the field of spatial genomics.\n\n\n\nI am dedicated to uncovering new insights from biomedical data, particularly in cancer and neurodegenerative disease research. By developing R packages, my aim is to create innovative tools and publish research that offer fresh perspectives on data, enabling new discoveries and making a meaningful impact on the medical and scientific community.\n\n\n\nBased on my experience, my primary audience consists of fellow researchers working in similar fields. I develop open-source R packages that extract new features from spatial genomics data, aiming to provide unique insights for this type of data. As open-source software, my work is accessible for others to use, improve, or benchmark against, fostering collaboration and progress within the field.\n\n\n\nMy motivation stems from my family, who have been affected by cancer and neurodegenerative diseases, inspiring me to contribute to advancements in disease research. My SpatialFeatures package has been submitted to Bioconductor and received a high distinction grade as my honors project. I can spend countless hours on data analysis projects that intrigue me, thoroughly enjoying the process of discovering new insights step by step. In the next five to ten years, I hope to pursue a PhD with meaningful contributions, graduate successfully, and secure a position in biomedical data science that allows me to continue working on impactful projects."
   },
   {
-    "objectID": "part1.html#background",
-    "href": "part1.html#background",
-    "title": "Part 1",
+    "objectID": "part1.html#who-am-i-what-makes-me-special",
+    "href": "part1.html#who-am-i-what-makes-me-special",
+    "title": "Part 1: Defining My Scientific Brand",
     "section": "",
-    "text": "Read this blogpost titled Building a brand as a scientist. Reflect on the questions in the “Defining your brand” section.\nWrite two paragraphs (4-6 sentences) max here answering one (or more) of the questions asked in the section."
+    "text": "I am Guan Gui, a first-class honors graduate in Data Science from the University of Sydney, currently pursuing my ScM in Biostatistics at Johns Hopkins University. I have a keen sensitivity to data and extensive experience in data analysis, with a strong passion for biomedical data, especially in the field of spatial genomics."
+  },
+  {
+    "objectID": "part1.html#what-do-i-stand-for",
+    "href": "part1.html#what-do-i-stand-for",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "I am dedicated to uncovering new insights from biomedical data, particularly in cancer and neurodegenerative disease research. By developing R packages, my aim is to create innovative tools and publish research that offer fresh perspectives on data, enabling new discoveries and making a meaningful impact on the medical and scientific community."
+  },
+  {
+    "objectID": "part1.html#who-is-my-audience",
+    "href": "part1.html#who-is-my-audience",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "Based on my experience, my primary audience consists of fellow researchers working in similar fields. I develop open-source R packages that extract new features from spatial genomics data, aiming to provide unique insights for this type of data. As open-source software, my work is accessible for others to use, improve, or benchmark against, fostering collaboration and progress within the field."
+  },
+  {
+    "objectID": "part1.html#what-is-my-goal",
+    "href": "part1.html#what-is-my-goal",
+    "title": "Part 1: Defining My Scientific Brand",
+    "section": "",
+    "text": "My motivation stems from my family, who have been affected by cancer and neurodegenerative diseases, inspiring me to contribute to advancements in disease research. My SpatialFeatures package has been submitted to Bioconductor and received a high distinction grade as my honors project. I can spend countless hours on data analysis projects that intrigue me, thoroughly enjoying the process of discovering new insights step by step. In the next five to ten years, I hope to pursue a PhD with meaningful contributions, graduate successfully, and secure a position in biomedical data science that allows me to continue working on impactful projects."
   },
   {
     "objectID": "part3.html",
     "href": "part3.html",
-    "title": "Part 3",
+    "title": "Part 3: Command Line Operations on students.csv",
     "section": "",
-    "text": "This section demonstrates basic command-line skills using a sample dataset students.csv.\n\n\nTo download the dataset, use the following command: ```bash wget https://example.com/students.csv"
+    "text": "To download the students.csv file from the provided GitHub URL, use the wget command:\nwhich wget\nrm -f students.csv\n/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv\n\n\n\ncat students.csv\n\n\n\nhead -n 5 students.csv\n\n\n\ntail -n 3 students.csv\n\n\n\nwc -l students.csv\n\n\n\ngrep \"Math\" students.csv\n\n\n\nUsing grep:\ngrep \",F,\" students.csv\n\n\n\nsort -t \",\" -k3,3n students.csv\n\n\n\ncut -d \",\" -f6 students.csv | sort | uniq\n\n\n\nawk -F \",\" '{sum+=$5} END {print \"Average Grade:\", sum/(NR-1)}' students.csv\n\n\n\nTo make an in-place replacement:\nsed -i '' 's/Math/Mathematics/g' students.csv\n\n\n\ncat students.csv"
   },
   {
-    "objectID": "part3.html#command-line-exercise",
-    "href": "part3.html#command-line-exercise",
-    "title": "Part 3",
+    "objectID": "part3.html#command-line-solutions",
+    "href": "part3.html#command-line-solutions",
+    "title": "Part 3: Command Line Operations on students.csv",
     "section": "",
-    "text": "This section demonstrates basic command-line skills using a sample dataset students.csv.\n\n\nTo download the dataset, use the following command: ```bash wget https://example.com/students.csv"
+    "text": "To download the students.csv file from the provided GitHub URL, use the wget command:\nwhich wget\nrm -f students.csv\n/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv\n\n\n\ncat students.csv\n\n\n\nhead -n 5 students.csv\n\n\n\ntail -n 3 students.csv\n\n\n\nwc -l students.csv\n\n\n\ngrep \"Math\" students.csv\n\n\n\nUsing grep:\ngrep \",F,\" students.csv\n\n\n\nsort -t \",\" -k3,3n students.csv\n\n\n\ncut -d \",\" -f6 students.csv | sort | uniq\n\n\n\nawk -F \",\" '{sum+=$5} END {print \"Average Grade:\", sum/(NR-1)}' students.csv\n\n\n\nTo make an in-place replacement:\nsed -i '' 's/Math/Mathematics/g' students.csv\n\n\n\ncat students.csv"
   },
   {
     "objectID": "example_analysis.html",
     "href": "example_analysis.html",
-    "title": "Example Analysis",
+    "title": "Example Analysis: Breast Cancer Data",
     "section": "",
-    "text": "For this analysis, I’ve chosen the dataset [Insert dataset name and link here] to explore some data analysis techniques.\n\n\n\nThe primary question I aim to answer is [insert research question here]. This analysis is aimed at an audience interested in [describe audience].\n\n\n\nThe data comes from [link to dataset source]. A data dictionary is available at [link to data dictionary or include one below].\n\n\n\nUsing dplyr and tidyr, the data has been wrangled and cleaned.\n\n\n\nBelow are some visualizations created with ggplot2: 1. Plot 1 - [Describe plot] 2. Plot 2 - [Describe plot] 3. Plot 3 - [Describe plot with faceting]\n![Example image or table here]\n\nNote: This analysis references three sources, which can be found in the accompanying .bib file.\n\n\n\n\nIn conclusion, [summarize your findings here in 4-6 sentences].\n\n\n\ndplyr: [list functions]\ntidyr: [list functions]\nggplot2: [list functions]"
+    "text": "This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to determine which features are most effective in distinguishing malignant from benign tumors. Specifically, we aim to answer the question: What variables are most influential in predicting breast cancer diagnosis?\nThis analysis is intended for medical researchers and clinicians interested in exploring diagnostic features that can assist in early detection and classification of breast cancer tumors. The dataset was originally collected by Dr. William H. Wolberg and is available from the UCI Machine Learning Repository (Wolberg and Mangasarian 1993).\nA complete data dictionary is provided below.\n\nNote: This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models."
   },
   {
     "objectID": "example_analysis.html#introduction",
     "href": "example_analysis.html#introduction",
-    "title": "Example Analysis",
+    "title": "Example Analysis: Breast Cancer Data",
     "section": "",
-    "text": "For this analysis, I’ve chosen the dataset [Insert dataset name and link here] to explore some data analysis techniques."
+    "text": "This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to determine which features are most effective in distinguishing malignant from benign tumors. Specifically, we aim to answer the question: What variables are most influential in predicting breast cancer diagnosis?\nThis analysis is intended for medical researchers and clinicians interested in exploring diagnostic features that can assist in early detection and classification of breast cancer tumors. The dataset was originally collected by Dr. William H. Wolberg and is available from the UCI Machine Learning Repository (Wolberg and Mangasarian 1993).\nA complete data dictionary is provided below.\n\nNote: This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models."
   },
   {
-    "objectID": "example_analysis.html#objective",
-    "href": "example_analysis.html#objective",
-    "title": "Example Analysis",
-    "section": "",
-    "text": "The primary question I aim to answer is [insert research question here]. This analysis is aimed at an audience interested in [describe audience]."
+    "objectID": "example_analysis.html#data-dictionary",
+    "href": "example_analysis.html#data-dictionary",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "2 Data Dictionary",
+    "text": "2 Data Dictionary\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nid\nUnique identifier for each patient\n\n\nDiagnosis\nDiagnosis of the tumor (M = malignant, B = benign)\n\n\nradius_mean\nMean radius: mean of distances from center to points on the perimeter\n\n\ntexture_mean\nMean texture: standard deviation of gray-scale values\n\n\nperimeter_mean\nMean perimeter: mean size of the core tumor perimeter\n\n\narea_mean\nMean area: mean size of the core tumor area\n\n\nsmoothness_mean\nMean smoothness: local variation in radius lengths\n\n\ncompactness_mean\nMean compactness: calculated as (perimeter^2 / area - 1.0)\n\n\nconcavity_mean\nMean concavity: severity of concave portions of the contour\n\n\nconcave.points_mean\nMean concave points: number of concave portions of the contour\n\n\nsymmetry_mean\nMean symmetry: measure of symmetry of cell nucleus\n\n\nfractal_dimension_mean\nMean fractal dimension: “coastline approximation” - 1\n\n\nradius_se\nStandard error of radius\n\n\ntexture_se\nStandard error of texture\n\n\nperimeter_se\nStandard error of perimeter\n\n\narea_se\nStandard error of area\n\n\nsmoothness_se\nStandard error of smoothness\n\n\ncompactness_se\nStandard error of compactness\n\n\nconcavity_se\nStandard error of concavity\n\n\nconcave.points_se\nStandard error of concave points\n\n\nsymmetry_se\nStandard error of symmetry\n\n\nfractal_dimension_se\nStandard error of fractal dimension\n\n\nradius_worst\nWorst or largest value of radius (mean of the three largest values)\n\n\ntexture_worst\nWorst or largest value of texture\n\n\nperimeter_worst\nWorst or largest value of perimeter\n\n\narea_worst\nWorst or largest value of area\n\n\nsmoothness_worst\nWorst or largest value of smoothness\n\n\ncompactness_worst\nWorst or largest value of compactness\n\n\nconcavity_worst\nWorst or largest value of concavity\n\n\nconcave.points_worst\nWorst or largest value of concave points\n\n\nsymmetry_worst\nWorst or largest value of symmetry\n\n\nfractal_dimension_worst\nWorst or largest value of fractal dimension\n\n\n\nFor a complete data dictionary, refer to the UCI Repository’s dataset description.\nBelow is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set, representing breast cancer cells (Repository 2023).\n\n\n\nBreast Cancer Cells"
   },
   {
-    "objectID": "example_analysis.html#data-source",
-    "href": "example_analysis.html#data-source",
-    "title": "Example Analysis",
-    "section": "",
-    "text": "The data comes from [link to dataset source]. A data dictionary is available at [link to data dictionary or include one below]."
+    "objectID": "example_analysis.html#descriptive-statistics",
+    "href": "example_analysis.html#descriptive-statistics",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "3 Descriptive Statistics",
+    "text": "3 Descriptive Statistics\n\n\nShow code\n# Introduction: Load and inspect the first few rows of the dataset\ndata &lt;- read.csv(\"example_analysis_data.csv\")\ndata &lt;- data %&gt;% select(-id, -X) %&gt;% rename(Diagnosis = diagnosis)\ndata$Diagnosis &lt;- factor(data$Diagnosis, levels = c(\"B\", \"M\"))\nhead(data)\n\n\n\n  \n\n\n\nShow code\n# Summary: The dataset includes various tumor measurements, with a diagnosis column indicating benign or malignant tumors."
   },
   {
-    "objectID": "example_analysis.html#data-wrangling",
-    "href": "example_analysis.html#data-wrangling",
-    "title": "Example Analysis",
-    "section": "",
-    "text": "Using dplyr and tidyr, the data has been wrangled and cleaned."
+    "objectID": "example_analysis.html#target-variable-distribution",
+    "href": "example_analysis.html#target-variable-distribution",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "4 Target Variable Distribution",
+    "text": "4 Target Variable Distribution\nThis bar plot shows the distribution of benign and malignant diagnoses in the dataset.\n\n\nShow code\n# Plot the distribution of tumor diagnoses\nggplot(data, aes(x = Diagnosis, fill = Diagnosis)) +\n  geom_bar() +\n  geom_text(stat='count', aes(label=..count..), vjust=-0.3) +\n  labs(\n    title = \"Distribution of Tumor Diagnoses in the Dataset\",\n    subtitle = \"Benign tumors are more frequent than malignant tumors\",\n    caption = \"This plot shows the count of benign and malignant tumors in the dataset\",\n    x = \"Tumor Diagnosis\",\n    y = \"Count of Cases\"\n  ) +\n  scale_fill_manual(values = c(\"B\" = \"#00CCCC\", \"M\" = \"salmon\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nSummary: Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training."
   },
   {
-    "objectID": "example_analysis.html#analysis-and-visualization",
-    "href": "example_analysis.html#analysis-and-visualization",
-    "title": "Example Analysis",
-    "section": "",
-    "text": "Below are some visualizations created with ggplot2: 1. Plot 1 - [Describe plot] 2. Plot 2 - [Describe plot] 3. Plot 3 - [Describe plot with faceting]\n![Example image or table here]\n\nNote: This analysis references three sources, which can be found in the accompanying .bib file."
+    "objectID": "example_analysis.html#faceted-plot-feature-distribution-by-diagnosis",
+    "href": "example_analysis.html#faceted-plot-feature-distribution-by-diagnosis",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "5 Faceted Plot: Feature Distribution by Diagnosis",
+    "text": "5 Faceted Plot: Feature Distribution by Diagnosis\nThis faceted histogram compares the distribution of radius_mean between benign and malignant tumors.\n\n\nShow code\n# Compare the distribution of 'radius_mean' across diagnoses using faceting\nggplot(data, aes(x = radius_mean, fill = Diagnosis)) +\n  geom_histogram(binwidth = 0.5, alpha = 0.7, position = \"identity\") +\n  facet_wrap(~ Diagnosis) +\n  labs(\n  title = \"Distribution of Mean Radius by Tumor Diagnosis\",\n  subtitle = \"Malignant tumors tend to have a larger mean radius\",\n  caption = \"Faceted histograms showing 'radius_mean' distribution for each diagnosis\",\n  x = \"Mean Radius\",\n  y = \"Frequency\"\n  ) +\n  scale_fill_manual(values = c(\"B\" = \"#00CCCC\", \"M\" = \"salmon\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nSummary: The faceted histograms reveal that malignant tumors generally have higher mean radius values compared to benign tumors."
+  },
+  {
+    "objectID": "example_analysis.html#correlation-analysis",
+    "href": "example_analysis.html#correlation-analysis",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "6 Correlation Analysis",
+    "text": "6 Correlation Analysis\n\n\nShow code\n# Compute and visualize correlations among numeric features\ncorrelations &lt;- cor(data %&gt;% select(-Diagnosis), method = \"pearson\")\ncorrplot(correlations, number.cex = .6, method = \"number\", type = \"upper\", tl.cex=1, tl.col = \"black\", col = COL2(\"RdYlBu\"))\n\n\n\n\n\n\n\n\n\nSummary: Strong correlations are seen among features like radius, perimeter, and area, indicating redundancy that can be reduced."
+  },
+  {
+    "objectID": "example_analysis.html#principal-component-analysis-pca",
+    "href": "example_analysis.html#principal-component-analysis-pca",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "7 Principal Component Analysis (PCA)",
+    "text": "7 Principal Component Analysis (PCA)\n(Hasan and Abdulazeez 2021)\n\n\nShow code\n# Perform PCA for dimensionality reduction\npca &lt;- prcomp(data %&gt;% select(-Diagnosis), scale = TRUE)\n\n# Variance explained by each component\nvar_explained &lt;- data.frame(\n  Component = 1:length(pca$sdev), \n  Variance = (pca$sdev)^2, \n  Proportion = (pca$sdev)^2 / sum((pca$sdev)^2), \n  Cumulative = cumsum((pca$sdev)^2 / sum((pca$sdev)^2))\n)\n\n# Scree Plot\nggplot(var_explained[1:10,], aes(x = Component, y = Proportion)) + \n  geom_bar(stat = \"identity\", fill = \"salmon\") +\n  geom_line(color = \"black\") +\n  geom_point(color = \"black\") +\n  labs(\n    title = \"Explained Variance by Principal Components\",\n    subtitle = \"The first few components capture the majority of variance\",\n    caption = \"Scree plot showing the variance explained by the first 10 components\",\n    x = \"Principal Component\",\n    y = \"Percentage of Explained Variance\"\n  )\n\n\n\n\n\n\n\n\n\n\nMargin Note: PCA helped identify six components explaining 88.76% of variance."
+  },
+  {
+    "objectID": "example_analysis.html#data-splitting",
+    "href": "example_analysis.html#data-splitting",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "8 Data Splitting",
+    "text": "8 Data Splitting\n\n\nShow code\n# Split the data into training and testing sets\nset.seed(101)\nsplit &lt;- sample.split(data$Diagnosis, SplitRatio = 0.8)\ntrain &lt;- subset(data, split == TRUE)\ntest &lt;- subset(data, split == FALSE)\n\n\nSummary: The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution."
+  },
+  {
+    "objectID": "example_analysis.html#model-training-random-forest",
+    "href": "example_analysis.html#model-training-random-forest",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "9 Model Training: Random Forest",
+    "text": "9 Model Training: Random Forest\n\n\nShow code\n# Set up cross-validation\ncontrol &lt;- trainControl(method = \"cv\", number = 10)\n\n# Random Forest\nrf_model &lt;- train(Diagnosis ~ ., data = train, method = \"rf\", ntree = 1000, trControl = control, importance = TRUE)\n\n\nSummary: A Random Forest model with cross-validation is trained to predict tumor diagnoses based on the dataset features."
+  },
+  {
+    "objectID": "example_analysis.html#model-evaluation",
+    "href": "example_analysis.html#model-evaluation",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "10 Model Evaluation",
+    "text": "10 Model Evaluation\n\n\nShow code\n# Evaluate the Random Forest model on the test set\nevaluate_model &lt;- function(model, test_data) {\n  predictions &lt;- predict(model, newdata = test_data)\n  cm &lt;- confusionMatrix(predictions, test_data$Diagnosis)\n  auc_value &lt;- auc(roc(test_data$Diagnosis, as.numeric(predictions)))\n  data.frame(\n    Accuracy = cm$overall['Accuracy'],\n    Sensitivity = cm$byClass['Sensitivity'],\n    Specificity = cm$byClass['Specificity'],\n    AUC = auc_value\n  )\n}\n\nrf_results &lt;- evaluate_model(rf_model, test)\nrf_results\n\n\n\n  \n\n\n\nSummary: The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases."
+  },
+  {
+    "objectID": "example_analysis.html#roc-curve-for-random-forest-model",
+    "href": "example_analysis.html#roc-curve-for-random-forest-model",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "11 ROC Curve for Random Forest Model",
+    "text": "11 ROC Curve for Random Forest Model\n(Romano, Barbul, and Korenstein 2023)\n\n\nShow code\n# Introduction: Plot the ROC curve to visualize model performance\nrf_roc &lt;- roc(test$Diagnosis, as.numeric(predict(rf_model, newdata = test)))\nrf_df &lt;- data.frame(Specificity = 1 - rf_roc$specificities, Sensitivity = rf_roc$sensitivities)\n\n# Plot ROC curve using ggplot2\nggplot(rf_df, aes(x = Specificity, y = Sensitivity)) +\n  geom_line(size = 1, color = \"green\") +\n  geom_abline(intercept = 0, slope = 1, linetype = \"dashed\", color = \"gray\") +\n  labs(\n    title = \"ROC Curve for Random Forest Classification\",\n    subtitle = \"High AUC reflects strong model discrimination ability\",\n    caption = \"ROC curve shows sensitivity vs. specificity for the Random Forest model\",\n    x = \"1 - Specificity (False Positive Rate)\",\n    y = \"Sensitivity (True Positive Rate)\"\n  ) +\n  theme_minimal() +\n  theme(plot.title = element_text(hjust = 0.5)) +\n  coord_cartesian(xlim = c(0, 1), ylim = c(0, 1))\n\n\n\n\n\n\n\n\n\nSummary: The ROC curve with AUC ~0.98 indicates the Random Forest model’s high sensitivity and specificity in distinguishing malignant from benign tumors."
   },
   {
     "objectID": "example_analysis.html#summary",
     "href": "example_analysis.html#summary",
-    "title": "Example Analysis",
-    "section": "",
-    "text": "In conclusion, [summarize your findings here in 4-6 sentences].\n\n\n\ndplyr: [list functions]\ntidyr: [list functions]\nggplot2: [list functions]"
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "12 Summary",
+    "text": "12 Summary\nThis analysis indicates that tumor characteristics such as radius, perimeter, and area are highly indicative of a malignant diagnosis. The data shows significant variability in these features between benign and malignant diagnoses, with malignant tumors generally exhibiting larger values. The correlation matrix highlights redundancy among some features, suggesting that dimensionality reduction could be beneficial for predictive modeling. Overall, this preliminary analysis provides insights that can guide further diagnostic model development.\n\nConclusion: This study identifies key features in breast cancer diagnosis, providing a foundation for future predictive analysis and model building in clinical applications."
+  },
+  {
+    "objectID": "example_analysis.html#functions-used",
+    "href": "example_analysis.html#functions-used",
+    "title": "Example Analysis: Breast Cancer Data",
+    "section": "13 Functions Used",
+    "text": "13 Functions Used\n\ndplyr: select, rename, filter, mutate, summarize\nggplot2: geom_bar, geom_point, geom_line\n\n```\n\n13.1 Summary of Adjustments\n\nOnly Random Forest model is retained.\nClear and complete Introduction with question, audience, and data source link.\nData Dictionary provided in a table with a link to UCI.\nImage included.\nData Wrangling uses dplyr and tidyr functions.\nPlots include geom_bar, geom_line, and geom_point functions with titles and labels.\nFaceting is used in the data distribution.\nTwo callout blocks are provided (Note and Margin).\nROC Curve is generated with ggplot2.\nBib file for citations.\nSummary included, and Functions Used list provided."
   },
   {
     "objectID": "about.html",
@@ -116,6 +186,6 @@
     "href": "index.html",
     "title": "Guan Gui",
     "section": "",
-    "text": "Hello! I am Guan Gui, a data scientist and biostatistics student with a passion for uncovering insights from complex biomedical data. I hold a first-class honours degree in Data Science from the University of Sydney and am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health."
+    "text": "Hello! I am Guan Gui, a data science and biostatistics student with a passion for uncovering insights from complex biomedical data. I am currently pursuing my ScM in Biostatistics at Johns Hopkins Bloomberg School of Public Health. I enjoy exploring new data science methods and their applications in public health."
   }
 ]

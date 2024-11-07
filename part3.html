@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Part 3 – biostat777-intro-GuanGui</title>
+<title>Part 3: Command Line Operations on students.csv – biostat777-intro-GuanGui</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,14 +102,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./example_analysis.html"> 
 <span class="menu-text">Example Analysis</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./part1.html"> 
-<span class="menu-text">Part 1</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./part3.html" aria-current="page"> 
-<span class="menu-text">Part 3</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -127,12 +119,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link active" data-scroll-target="#part-3">Part 3</a>
+  <li><a href="#command-line-solutions" id="toc-command-line-solutions" class="nav-link active" data-scroll-target="#command-line-solutions">Command Line Solutions</a>
   <ul class="collapse">
-  <li><a href="#command-line-exercise" id="toc-command-line-exercise" class="nav-link" data-scroll-target="#command-line-exercise">Command-Line Exercise</a>
-  <ul class="collapse">
-  <li><a href="#download-the-file" id="toc-download-the-file" class="nav-link" data-scroll-target="#download-the-file">Download the File</a></li>
-  </ul></li>
+  <li><a href="#download-the-students.csv-file" id="toc-download-the-students.csv-file" class="nav-link" data-scroll-target="#download-the-students.csv-file">1. Download the <code>students.csv</code> file</a></li>
+  <li><a href="#display-the-contents-of-the-students.csv-file-using-the-cat-command" id="toc-display-the-contents-of-the-students.csv-file-using-the-cat-command" class="nav-link" data-scroll-target="#display-the-contents-of-the-students.csv-file-using-the-cat-command">2. Display the contents of the <code>students.csv</code> file using the <code>cat</code> command</a></li>
+  <li><a href="#display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines" id="toc-display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines" class="nav-link" data-scroll-target="#display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines">3. Display only the first 5 lines of the file using <code>head</code> to show the first few lines</a></li>
+  <li><a href="#display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines" id="toc-display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines" class="nav-link" data-scroll-target="#display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines">4. Display only the last 3 lines of the file using <code>tail</code> to show the last few lines</a></li>
+  <li><a href="#count-the-number-of-lines-in-the-file-using-the-wc-command" id="toc-count-the-number-of-lines-in-the-file-using-the-wc-command" class="nav-link" data-scroll-target="#count-the-number-of-lines-in-the-file-using-the-wc-command">5. Count the number of lines in the file using the <code>wc</code> command</a></li>
+  <li><a href="#find-all-students-who-are-taking-math-as-a-subject-using-grep" id="toc-find-all-students-who-are-taking-math-as-a-subject-using-grep" class="nav-link" data-scroll-target="#find-all-students-who-are-taking-math-as-a-subject-using-grep">6. Find all students who are taking “Math” as a subject using <code>grep</code></a></li>
+  <li><a href="#find-all-female-students-using-grep-or-awk-to-filter-based-on-gender" id="toc-find-all-female-students-using-grep-or-awk-to-filter-based-on-gender" class="nav-link" data-scroll-target="#find-all-female-students-using-grep-or-awk-to-filter-based-on-gender">7. Find all female students using <code>grep</code> or <code>awk</code> to filter based on gender</a></li>
+  <li><a href="#sort-the-file-by-the-students-ages-in-ascending-order-using-sort" id="toc-sort-the-file-by-the-students-ages-in-ascending-order-using-sort" class="nav-link" data-scroll-target="#sort-the-file-by-the-students-ages-in-ascending-order-using-sort">8. Sort the file by the students’ ages in ascending order using <code>sort</code></a></li>
+  <li><a href="#find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq" id="toc-find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq" class="nav-link" data-scroll-target="#find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq">9. Find the unique subjects listed in the file using <code>cut</code>, <code>sort</code>, and <code>uniq</code></a></li>
+  <li><a href="#calculate-the-average-grade-of-the-students-using-awk" id="toc-calculate-the-average-grade-of-the-students-using-awk" class="nav-link" data-scroll-target="#calculate-the-average-grade-of-the-students-using-awk">10. Calculate the average grade of the students using <code>awk</code></a></li>
+  <li><a href="#replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed" id="toc-replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed" class="nav-link" data-scroll-target="#replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed">11. Replace all occurrences of “Math” with “Mathematics” in the file using <code>sed</code></a></li>
+  <li><a href="#display-the-final-students.csv-file" id="toc-display-the-final-students.csv-file" class="nav-link" data-scroll-target="#display-the-final-students.csv-file">12. Display the final <code>students.csv</code> file</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Part 3</h1>
+<h1 class="title">Part 3: Command Line Operations on students.csv</h1>
 </div>
 
 
@@ -159,17 +159,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="part-3" class="level1">
-<h1>Part 3</h1>
-<section id="command-line-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="command-line-exercise">Command-Line Exercise</h2>
-<p>This section demonstrates basic command-line skills using a sample dataset <code>students.csv</code>.</p>
-<section id="download-the-file" class="level3">
-<h3 class="anchored" data-anchor-id="download-the-file">Download the File</h3>
-<p>To download the dataset, use the following command: ```bash wget https://example.com/students.csv</p>
-
-
+<section id="command-line-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-solutions">Command Line Solutions</h2>
+<section id="download-the-students.csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="download-the-students.csv-file">1. Download the <code>students.csv</code> file</h3>
+<p>To download the <code>students.csv</code> file from the provided GitHub URL, use the <code>wget</code> command:</p>
+<pre class="{bash}"><code>which wget
+rm -f students.csv
+/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv</code></pre>
 </section>
+<section id="display-the-contents-of-the-students.csv-file-using-the-cat-command" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-contents-of-the-students.csv-file-using-the-cat-command">2. Display the contents of the <code>students.csv</code> file using the <code>cat</code> command</h3>
+<pre class="{bash}"><code>cat students.csv</code></pre>
+</section>
+<section id="display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines" class="level3">
+<h3 class="anchored" data-anchor-id="display-only-the-first-5-lines-of-the-file-using-head-to-show-the-first-few-lines">3. Display only the first 5 lines of the file using <code>head</code> to show the first few lines</h3>
+<pre class="{bash}"><code>head -n 5 students.csv</code></pre>
+</section>
+<section id="display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines" class="level3">
+<h3 class="anchored" data-anchor-id="display-only-the-last-3-lines-of-the-file-using-tail-to-show-the-last-few-lines">4. Display only the last 3 lines of the file using <code>tail</code> to show the last few lines</h3>
+<pre class="{bash}"><code>tail -n 3 students.csv</code></pre>
+</section>
+<section id="count-the-number-of-lines-in-the-file-using-the-wc-command" class="level3">
+<h3 class="anchored" data-anchor-id="count-the-number-of-lines-in-the-file-using-the-wc-command">5. Count the number of lines in the file using the <code>wc</code> command</h3>
+<pre class="{bash}"><code>wc -l students.csv</code></pre>
+</section>
+<section id="find-all-students-who-are-taking-math-as-a-subject-using-grep" class="level3">
+<h3 class="anchored" data-anchor-id="find-all-students-who-are-taking-math-as-a-subject-using-grep">6. Find all students who are taking “Math” as a subject using <code>grep</code></h3>
+<pre class="{bash}"><code>grep "Math" students.csv</code></pre>
+</section>
+<section id="find-all-female-students-using-grep-or-awk-to-filter-based-on-gender" class="level3">
+<h3 class="anchored" data-anchor-id="find-all-female-students-using-grep-or-awk-to-filter-based-on-gender">7. Find all female students using <code>grep</code> or <code>awk</code> to filter based on gender</h3>
+<p>Using <code>grep</code>:</p>
+<pre class="{bash}"><code>grep ",F," students.csv</code></pre>
+</section>
+<section id="sort-the-file-by-the-students-ages-in-ascending-order-using-sort" class="level3">
+<h3 class="anchored" data-anchor-id="sort-the-file-by-the-students-ages-in-ascending-order-using-sort">8. Sort the file by the students’ ages in ascending order using <code>sort</code></h3>
+<pre class="{bash}"><code>sort -t "," -k3,3n students.csv</code></pre>
+</section>
+<section id="find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq" class="level3">
+<h3 class="anchored" data-anchor-id="find-the-unique-subjects-listed-in-the-file-using-cut-sort-and-uniq">9. Find the unique subjects listed in the file using <code>cut</code>, <code>sort</code>, and <code>uniq</code></h3>
+<pre class="{bash}"><code>cut -d "," -f6 students.csv | sort | uniq</code></pre>
+</section>
+<section id="calculate-the-average-grade-of-the-students-using-awk" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-the-average-grade-of-the-students-using-awk">10. Calculate the average grade of the students using <code>awk</code></h3>
+<pre class="{bash}"><code>awk -F "," '{sum+=$5} END {print "Average Grade:", sum/(NR-1)}' students.csv</code></pre>
+</section>
+<section id="replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed" class="level3">
+<h3 class="anchored" data-anchor-id="replace-all-occurrences-of-math-with-mathematics-in-the-file-using-sed">11. Replace all occurrences of “Math” with “Mathematics” in the file using <code>sed</code></h3>
+<p>To make an in-place replacement:</p>
+<pre class="{bash}"><code>sed -i '' 's/Math/Mathematics/g' students.csv</code></pre>
+</section>
+<section id="display-the-final-students.csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-final-students.csv-file">12. Display the final <code>students.csv</code> file</h3>
+<pre class="{bash}"><code>cat students.csv</code></pre>
+
+
 </section>
 </section>
 

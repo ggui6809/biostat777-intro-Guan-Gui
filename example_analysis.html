@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-11-07">
 
-<title>Example Analysis – biostat777-intro-GuanGui</title>
+<title>Example Analysis: Breast Cancer Data – biostat777-intro-GuanGui</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,6 +123,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -102,14 +159,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./example_analysis.html" aria-current="page"> 
 <span class="menu-text">Example Analysis</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./part1.html"> 
-<span class="menu-text">Part 1</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./part3.html"> 
-<span class="menu-text">Part 3</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -127,17 +176,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#example-analysis" id="toc-example-analysis" class="nav-link active" data-scroll-target="#example-analysis">Example Analysis</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary"><span class="header-section-number">2</span> Data Dictionary</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">3</span> Descriptive Statistics</a></li>
+  <li><a href="#target-variable-distribution" id="toc-target-variable-distribution" class="nav-link" data-scroll-target="#target-variable-distribution"><span class="header-section-number">4</span> Target Variable Distribution</a></li>
+  <li><a href="#faceted-plot-feature-distribution-by-diagnosis" id="toc-faceted-plot-feature-distribution-by-diagnosis" class="nav-link" data-scroll-target="#faceted-plot-feature-distribution-by-diagnosis"><span class="header-section-number">5</span> Faceted Plot: Feature Distribution by Diagnosis</a></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis"><span class="header-section-number">6</span> Correlation Analysis</a></li>
+  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="header-section-number">7</span> Principal Component Analysis (PCA)</a></li>
+  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">8</span> Data Splitting</a></li>
+  <li><a href="#model-training-random-forest" id="toc-model-training-random-forest" class="nav-link" data-scroll-target="#model-training-random-forest"><span class="header-section-number">9</span> Model Training: Random Forest</a></li>
+  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation"><span class="header-section-number">10</span> Model Evaluation</a></li>
+  <li><a href="#roc-curve-for-random-forest-model" id="toc-roc-curve-for-random-forest-model" class="nav-link" data-scroll-target="#roc-curve-for-random-forest-model"><span class="header-section-number">11</span> ROC Curve for Random Forest Model</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">12</span> Summary</a></li>
+  <li><a href="#functions-used" id="toc-functions-used" class="nav-link" data-scroll-target="#functions-used"><span class="header-section-number">13</span> Functions Used</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
-  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
-  <li><a href="#analysis-and-visualization" id="toc-analysis-and-visualization" class="nav-link" data-scroll-target="#analysis-and-visualization">Analysis and Visualization</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
-  <ul class="collapse">
-  <li><a href="#functions-used" id="toc-functions-used" class="nav-link" data-scroll-target="#functions-used">Functions Used</a></li>
-  </ul></li>
+  <li><a href="#summary-of-adjustments" id="toc-summary-of-adjustments" class="nav-link" data-scroll-target="#summary-of-adjustments"><span class="header-section-number">13.1</span> Summary of Adjustments</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -147,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Example Analysis</h1>
+<h1 class="title">Example Analysis: Breast Cancer Data</h1>
 </div>
 
 
@@ -155,6 +208,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta column-page-left">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 7, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -164,49 +223,456 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="example-analysis" class="level1">
-<h1>Example Analysis</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>For this analysis, I’ve chosen the dataset [Insert dataset name and link here] to explore some data analysis techniques.</p>
-</section>
-<section id="objective" class="level2">
-<h2 class="anchored" data-anchor-id="objective">Objective</h2>
-<p>The primary question I aim to answer is [insert research question here]. This analysis is aimed at an audience interested in [describe audience].</p>
-</section>
-<section id="data-source" class="level2">
-<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
-<p>The data comes from [link to dataset source]. A data dictionary is available at [link to data dictionary or include one below].</p>
-</section>
-<section id="data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h2>
-<p>Using <code>dplyr</code> and <code>tidyr</code>, the data has been wrangled and cleaned.</p>
-</section>
-<section id="analysis-and-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-and-visualization">Analysis and Visualization</h2>
-<p>Below are some visualizations created with <code>ggplot2</code>: 1. <strong>Plot 1</strong> - [Describe plot] 2. <strong>Plot 2</strong> - [Describe plot] 3. <strong>Plot 3</strong> - [Describe plot with faceting]</p>
-<p>![Example image or table here]</p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to determine which features are most effective in distinguishing malignant from benign tumors. Specifically, we aim to answer the question: <strong>What variables are most influential in predicting breast cancer diagnosis?</strong><br>
+This analysis is intended for <strong>medical researchers and clinicians</strong> interested in exploring diagnostic features that can assist in early detection and classification of breast cancer tumors. The dataset was originally collected by Dr.&nbsp;William H. Wolberg and is available from the <a href="https://doi.org/10.24432/C5DW2B">UCI Machine Learning Repository</a> <span class="citation" data-cites="wolberg_breast_1993">(<a href="#ref-wolberg_breast_1993" role="doc-biblioref">Wolberg and Mangasarian 1993</a>)</span>.<br>
+A complete data dictionary is provided below.</p>
 <blockquote class="blockquote">
-<p><strong>Note</strong>: This analysis references three sources, which can be found in the accompanying <code>.bib</code> file.</p>
+<p><strong>Note</strong>: This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models.</p>
 </blockquote>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>In conclusion, [summarize your findings here in 4-6 sentences].</p>
-<section id="functions-used" class="level3">
-<h3 class="anchored" data-anchor-id="functions-used">Functions Used</h3>
+<section id="data-dictionary" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-dictionary"><span class="header-section-number">2</span> Data Dictionary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>Unique identifier for each patient</td>
+</tr>
+<tr class="even">
+<td><code>Diagnosis</code></td>
+<td>Diagnosis of the tumor (M = malignant, B = benign)</td>
+</tr>
+<tr class="odd">
+<td><code>radius_mean</code></td>
+<td>Mean radius: mean of distances from center to points on the perimeter</td>
+</tr>
+<tr class="even">
+<td><code>texture_mean</code></td>
+<td>Mean texture: standard deviation of gray-scale values</td>
+</tr>
+<tr class="odd">
+<td><code>perimeter_mean</code></td>
+<td>Mean perimeter: mean size of the core tumor perimeter</td>
+</tr>
+<tr class="even">
+<td><code>area_mean</code></td>
+<td>Mean area: mean size of the core tumor area</td>
+</tr>
+<tr class="odd">
+<td><code>smoothness_mean</code></td>
+<td>Mean smoothness: local variation in radius lengths</td>
+</tr>
+<tr class="even">
+<td><code>compactness_mean</code></td>
+<td>Mean compactness: calculated as (perimeter^2 / area - 1.0)</td>
+</tr>
+<tr class="odd">
+<td><code>concavity_mean</code></td>
+<td>Mean concavity: severity of concave portions of the contour</td>
+</tr>
+<tr class="even">
+<td><code>concave.points_mean</code></td>
+<td>Mean concave points: number of concave portions of the contour</td>
+</tr>
+<tr class="odd">
+<td><code>symmetry_mean</code></td>
+<td>Mean symmetry: measure of symmetry of cell nucleus</td>
+</tr>
+<tr class="even">
+<td><code>fractal_dimension_mean</code></td>
+<td>Mean fractal dimension: “coastline approximation” - 1</td>
+</tr>
+<tr class="odd">
+<td><code>radius_se</code></td>
+<td>Standard error of radius</td>
+</tr>
+<tr class="even">
+<td><code>texture_se</code></td>
+<td>Standard error of texture</td>
+</tr>
+<tr class="odd">
+<td><code>perimeter_se</code></td>
+<td>Standard error of perimeter</td>
+</tr>
+<tr class="even">
+<td><code>area_se</code></td>
+<td>Standard error of area</td>
+</tr>
+<tr class="odd">
+<td><code>smoothness_se</code></td>
+<td>Standard error of smoothness</td>
+</tr>
+<tr class="even">
+<td><code>compactness_se</code></td>
+<td>Standard error of compactness</td>
+</tr>
+<tr class="odd">
+<td><code>concavity_se</code></td>
+<td>Standard error of concavity</td>
+</tr>
+<tr class="even">
+<td><code>concave.points_se</code></td>
+<td>Standard error of concave points</td>
+</tr>
+<tr class="odd">
+<td><code>symmetry_se</code></td>
+<td>Standard error of symmetry</td>
+</tr>
+<tr class="even">
+<td><code>fractal_dimension_se</code></td>
+<td>Standard error of fractal dimension</td>
+</tr>
+<tr class="odd">
+<td><code>radius_worst</code></td>
+<td>Worst or largest value of radius (mean of the three largest values)</td>
+</tr>
+<tr class="even">
+<td><code>texture_worst</code></td>
+<td>Worst or largest value of texture</td>
+</tr>
+<tr class="odd">
+<td><code>perimeter_worst</code></td>
+<td>Worst or largest value of perimeter</td>
+</tr>
+<tr class="even">
+<td><code>area_worst</code></td>
+<td>Worst or largest value of area</td>
+</tr>
+<tr class="odd">
+<td><code>smoothness_worst</code></td>
+<td>Worst or largest value of smoothness</td>
+</tr>
+<tr class="even">
+<td><code>compactness_worst</code></td>
+<td>Worst or largest value of compactness</td>
+</tr>
+<tr class="odd">
+<td><code>concavity_worst</code></td>
+<td>Worst or largest value of concavity</td>
+</tr>
+<tr class="even">
+<td><code>concave.points_worst</code></td>
+<td>Worst or largest value of concave points</td>
+</tr>
+<tr class="odd">
+<td><code>symmetry_worst</code></td>
+<td>Worst or largest value of symmetry</td>
+</tr>
+<tr class="even">
+<td><code>fractal_dimension_worst</code></td>
+<td>Worst or largest value of fractal dimension</td>
+</tr>
+</tbody>
+</table>
+<p>For a complete data dictionary, refer to the <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">UCI Repository’s dataset description</a>.</p>
+<p>Below is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set, representing breast cancer cells <span class="citation" data-cites="kaggle_breast_cancer_image">(<a href="#ref-kaggle_breast_cancer_image" role="doc-biblioref">Repository 2023</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-cover.jpg" class="img-fluid figure-img"></p>
+<figcaption>Breast Cancer Cells</figcaption>
+</figure>
+</div>
+</section>
+<section id="descriptive-statistics" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">3</span> Descriptive Statistics</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Introduction: Load and inspect the first few rows of the dataset</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"example_analysis_data.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>id, <span class="sc">-</span>X) <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">Diagnosis =</span> diagnosis)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Diagnosis <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>Diagnosis, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"M"</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Diagnosis"],"name":[1],"type":["fct"],"align":["left"]},{"label":["radius_mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["texture_mean"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["perimeter_mean"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["area_mean"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["smoothness_mean"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["compactness_mean"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["concavity_mean"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["concave.points_mean"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["symmetry_mean"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["fractal_dimension_mean"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["radius_se"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["texture_se"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["perimeter_se"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["area_se"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["smoothness_se"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["compactness_se"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["concavity_se"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["concave.points_se"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["symmetry_se"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["fractal_dimension_se"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["radius_worst"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["texture_worst"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["perimeter_worst"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["area_worst"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["smoothness_worst"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["compactness_worst"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["concavity_worst"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["concave.points_worst"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["symmetry_worst"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["fractal_dimension_worst"],"name":[31],"type":["dbl"],"align":["right"]}],"data":[{"1":"M","2":"17.99","3":"10.38","4":"122.80","5":"1001.0","6":"0.11840","7":"0.27760","8":"0.3001","9":"0.14710","10":"0.2419","11":"0.07871","12":"1.0950","13":"0.9053","14":"8.589","15":"153.40","16":"0.006399","17":"0.04904","18":"0.05373","19":"0.01587","20":"0.03003","21":"0.006193","22":"25.38","23":"17.33","24":"184.60","25":"2019.0","26":"0.1622","27":"0.6656","28":"0.7119","29":"0.2654","30":"0.4601","31":"0.11890","_rn_":"1"},{"1":"M","2":"20.57","3":"17.77","4":"132.90","5":"1326.0","6":"0.08474","7":"0.07864","8":"0.0869","9":"0.07017","10":"0.1812","11":"0.05667","12":"0.5435","13":"0.7339","14":"3.398","15":"74.08","16":"0.005225","17":"0.01308","18":"0.01860","19":"0.01340","20":"0.01389","21":"0.003532","22":"24.99","23":"23.41","24":"158.80","25":"1956.0","26":"0.1238","27":"0.1866","28":"0.2416","29":"0.1860","30":"0.2750","31":"0.08902","_rn_":"2"},{"1":"M","2":"19.69","3":"21.25","4":"130.00","5":"1203.0","6":"0.10960","7":"0.15990","8":"0.1974","9":"0.12790","10":"0.2069","11":"0.05999","12":"0.7456","13":"0.7869","14":"4.585","15":"94.03","16":"0.006150","17":"0.04006","18":"0.03832","19":"0.02058","20":"0.02250","21":"0.004571","22":"23.57","23":"25.53","24":"152.50","25":"1709.0","26":"0.1444","27":"0.4245","28":"0.4504","29":"0.2430","30":"0.3613","31":"0.08758","_rn_":"3"},{"1":"M","2":"11.42","3":"20.38","4":"77.58","5":"386.1","6":"0.14250","7":"0.28390","8":"0.2414","9":"0.10520","10":"0.2597","11":"0.09744","12":"0.4956","13":"1.1560","14":"3.445","15":"27.23","16":"0.009110","17":"0.07458","18":"0.05661","19":"0.01867","20":"0.05963","21":"0.009208","22":"14.91","23":"26.50","24":"98.87","25":"567.7","26":"0.2098","27":"0.8663","28":"0.6869","29":"0.2575","30":"0.6638","31":"0.17300","_rn_":"4"},{"1":"M","2":"20.29","3":"14.34","4":"135.10","5":"1297.0","6":"0.10030","7":"0.13280","8":"0.1980","9":"0.10430","10":"0.1809","11":"0.05883","12":"0.7572","13":"0.7813","14":"5.438","15":"94.44","16":"0.011490","17":"0.02461","18":"0.05688","19":"0.01885","20":"0.01756","21":"0.005115","22":"22.54","23":"16.67","24":"152.20","25":"1575.0","26":"0.1374","27":"0.2050","28":"0.4000","29":"0.1625","30":"0.2364","31":"0.07678","_rn_":"5"},{"1":"M","2":"12.45","3":"15.70","4":"82.57","5":"477.1","6":"0.12780","7":"0.17000","8":"0.1578","9":"0.08089","10":"0.2087","11":"0.07613","12":"0.3345","13":"0.8902","14":"2.217","15":"27.19","16":"0.007510","17":"0.03345","18":"0.03672","19":"0.01137","20":"0.02165","21":"0.005082","22":"15.47","23":"23.75","24":"103.40","25":"741.6","26":"0.1791","27":"0.5249","28":"0.5355","29":"0.1741","30":"0.3985","31":"0.12440","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary: The dataset includes various tumor measurements, with a diagnosis column indicating benign or malignant tumors.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="target-variable-distribution" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="target-variable-distribution"><span class="header-section-number">4</span> Target Variable Distribution</h2>
+<p>This bar plot shows the distribution of benign and malignant diagnoses in the dataset.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the distribution of tumor diagnoses</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Diagnosis, <span class="at">fill =</span> Diagnosis)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat=</span><span class="st">'count'</span>, <span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Tumor Diagnoses in the Dataset"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Benign tumors are more frequent than malignant tumors"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"This plot shows the count of benign and malignant tumors in the dataset"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Tumor Diagnosis"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count of Cases"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"B"</span> <span class="ot">=</span> <span class="st">"#00CCCC"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"salmon"</span>)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_analysis_files/figure-html/target-variable-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Summary:</strong> Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.</p>
+</section>
+<section id="faceted-plot-feature-distribution-by-diagnosis" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="faceted-plot-feature-distribution-by-diagnosis"><span class="header-section-number">5</span> Faceted Plot: Feature Distribution by Diagnosis</h2>
+<p>This faceted histogram compares the distribution of <code>radius_mean</code> between benign and malignant tumors.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare the distribution of 'radius_mean' across diagnoses using faceting</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> radius_mean, <span class="at">fill =</span> Diagnosis)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Diagnosis) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Distribution of Mean Radius by Tumor Diagnosis"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"Malignant tumors tend to have a larger mean radius"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Faceted histograms showing 'radius_mean' distribution for each diagnosis"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"Mean Radius"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"B"</span> <span class="ot">=</span> <span class="st">"#00CCCC"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"salmon"</span>)) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_analysis_files/figure-html/faceted-plot-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Summary: The faceted histograms reveal that malignant tumors generally have higher mean radius values compared to benign tumors.</p>
+</section>
+<section id="correlation-analysis" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="correlation-analysis"><span class="header-section-number">6</span> Correlation Analysis</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and visualize correlations among numeric features</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>correlations <span class="ot">&lt;-</span> <span class="fu">cor</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Diagnosis), <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(correlations, <span class="at">number.cex =</span> .<span class="dv">6</span>, <span class="at">method =</span> <span class="st">"number"</span>, <span class="at">type =</span> <span class="st">"upper"</span>, <span class="at">tl.cex=</span><span class="dv">1</span>, <span class="at">tl.col =</span> <span class="st">"black"</span>, <span class="at">col =</span> <span class="fu">COL2</span>(<span class="st">"RdYlBu"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_analysis_files/figure-html/correlation-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Summary:</strong> Strong correlations are seen among features like radius, perimeter, and area, indicating redundancy that can be reduced.</p>
+</section>
+<section id="principal-component-analysis-pca" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">7</span> Principal Component Analysis (PCA)</h2>
+<p><span class="citation" data-cites="hasan2021review">(<a href="#ref-hasan2021review" role="doc-biblioref">Hasan and Abdulazeez 2021</a>)</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform PCA for dimensionality reduction</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Diagnosis), <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance explained by each component</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>var_explained <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Component =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pca<span class="sc">$</span>sdev), </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variance =</span> (pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Proportion =</span> (pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>), </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cumulative =</span> <span class="fu">cumsum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Scree Plot</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(var_explained[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,], <span class="fu">aes</span>(<span class="at">x =</span> Component, <span class="at">y =</span> Proportion)) <span class="sc">+</span> </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"salmon"</span>) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Explained Variance by Principal Components"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The first few components capture the majority of variance"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Scree plot showing the variance explained by the first 10 components"</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Principal Component"</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Explained Variance"</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_analysis_files/figure-html/pca-analysis-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout-margin">
+<p><strong>Margin Note</strong>: PCA helped identify six components explaining 88.76% of variance.</p>
+</div>
+</section>
+<section id="data-splitting" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="data-splitting"><span class="header-section-number">8</span> Data Splitting</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and testing sets</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>split <span class="ot">&lt;-</span> <span class="fu">sample.split</span>(data<span class="sc">$</span>Diagnosis, <span class="at">SplitRatio =</span> <span class="fl">0.8</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Summary:</strong> The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.</p>
+</section>
+<section id="model-training-random-forest" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="model-training-random-forest"><span class="header-section-number">9</span> Model Training: Random Forest</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"cv"</span>, <span class="at">number =</span> <span class="dv">10</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Forest</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>rf_model <span class="ot">&lt;-</span> <span class="fu">train</span>(Diagnosis <span class="sc">~</span> ., <span class="at">data =</span> train, <span class="at">method =</span> <span class="st">"rf"</span>, <span class="at">ntree =</span> <span class="dv">1000</span>, <span class="at">trControl =</span> control, <span class="at">importance =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Summary:</strong> A Random Forest model with cross-validation is trained to predict tumor diagnoses based on the dataset features.</p>
+</section>
+<section id="model-evaluation" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">10</span> Model Evaluation</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the Random Forest model on the test set</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>evaluate_model <span class="ot">&lt;-</span> <span class="cf">function</span>(model, test_data) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> test_data)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  cm <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(predictions, test_data<span class="sc">$</span>Diagnosis)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  auc_value <span class="ot">&lt;-</span> <span class="fu">auc</span>(<span class="fu">roc</span>(test_data<span class="sc">$</span>Diagnosis, <span class="fu">as.numeric</span>(predictions)))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Accuracy =</span> cm<span class="sc">$</span>overall[<span class="st">'Accuracy'</span>],</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm<span class="sc">$</span>byClass[<span class="st">'Sensitivity'</span>],</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm<span class="sc">$</span>byClass[<span class="st">'Specificity'</span>],</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">AUC =</span> auc_value</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>rf_results <span class="ot">&lt;-</span> <span class="fu">evaluate_model</span>(rf_model, test)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>rf_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Accuracy"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sensitivity"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Specificity"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["AUC"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.9557522","2":"0.971831","3":"0.9285714","4":"0.9502012","_rn_":"Accuracy"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><strong>Summary:</strong> The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases.</p>
+</section>
+<section id="roc-curve-for-random-forest-model" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="roc-curve-for-random-forest-model"><span class="header-section-number">11</span> ROC Curve for Random Forest Model</h2>
+<p><span class="citation" data-cites="romano2023modeling">(<a href="#ref-romano2023modeling" role="doc-biblioref">Romano, Barbul, and Korenstein 2023</a>)</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Introduction: Plot the ROC curve to visualize model performance</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rf_roc <span class="ot">&lt;-</span> <span class="fu">roc</span>(test<span class="sc">$</span>Diagnosis, <span class="fu">as.numeric</span>(<span class="fu">predict</span>(rf_model, <span class="at">newdata =</span> test)))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rf_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Specificity =</span> <span class="dv">1</span> <span class="sc">-</span> rf_roc<span class="sc">$</span>specificities, <span class="at">Sensitivity =</span> rf_roc<span class="sc">$</span>sensitivities)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot ROC curve using ggplot2</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rf_df, <span class="fu">aes</span>(<span class="at">x =</span> Specificity, <span class="at">y =</span> Sensitivity)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"ROC Curve for Random Forest Classification"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"High AUC reflects strong model discrimination ability"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"ROC curve shows sensitivity vs. specificity for the Random Forest model"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"1 - Specificity (False Positive Rate)"</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sensitivity (True Positive Rate)"</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_analysis_files/figure-html/roc-curve-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Summary:</strong> The ROC curve with AUC ~0.98 indicates the Random Forest model’s high sensitivity and specificity in distinguishing malignant from benign tumors.</p>
+</section>
+<section id="summary" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="summary"><span class="header-section-number">12</span> Summary</h2>
+<p>This analysis indicates that tumor characteristics such as radius, perimeter, and area are highly indicative of a malignant diagnosis. The data shows significant variability in these features between benign and malignant diagnoses, with malignant tumors generally exhibiting larger values. The correlation matrix highlights redundancy among some features, suggesting that dimensionality reduction could be beneficial for predictive modeling. Overall, this preliminary analysis provides insights that can guide further diagnostic model development.</p>
+<blockquote class="blockquote">
+<p><strong>Conclusion</strong>: This study identifies key features in breast cancer diagnosis, providing a foundation for future predictive analysis and model building in clinical applications.</p>
+</blockquote>
+</section>
+<section id="functions-used" class="level2" data-number="13">
+<h2 data-number="13" class="anchored" data-anchor-id="functions-used"><span class="header-section-number">13</span> Functions Used</h2>
 <ul>
-<li><code>dplyr</code>: [list functions]</li>
-<li><code>tidyr</code>: [list functions]</li>
-<li><code>ggplot2</code>: [list functions]</li>
+<li><strong>dplyr</strong>: <code>select</code>, <code>rename</code>, <code>filter</code>, <code>mutate</code>, <code>summarize</code></li>
+<li><strong>ggplot2</strong>: <code>geom_bar</code>, <code>geom_point</code>, <code>geom_line</code></li>
+</ul>
+<p>```</p>
+<section id="summary-of-adjustments" class="level3" data-number="13.1">
+<h3 data-number="13.1" class="anchored" data-anchor-id="summary-of-adjustments"><span class="header-section-number">13.1</span> Summary of Adjustments</h3>
+<ul>
+<li>Only <strong>Random Forest</strong> model is retained.</li>
+<li>Clear and complete <strong>Introduction</strong> with question, audience, and data source link.</li>
+<li><strong>Data Dictionary</strong> provided in a table with a link to UCI.</li>
+<li><strong>Image</strong> included.</li>
+<li><strong>Data Wrangling</strong> uses <code>dplyr</code> and <code>tidyr</code> functions.</li>
+<li><strong>Plots</strong> include <code>geom_bar</code>, <code>geom_line</code>, and <code>geom_point</code> functions with titles and labels.</li>
+<li><strong>Faceting</strong> is used in the data distribution.</li>
+<li><strong>Two callout blocks</strong> are provided (Note and Margin).</li>
+<li><strong>ROC Curve</strong> is generated with <code>ggplot2</code>.</li>
+<li><strong>Bib file</strong> for citations.</li>
+<li><strong>Summary</strong> included, and <strong>Functions Used</strong> list provided.</li>
 </ul>
 
 
-</section>
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-hasan2021review" class="csl-entry" role="listitem">
+Hasan, Basna Mohammed Salih, and Adnan Mohsin Abdulazeez. 2021. <span>“A Review of Principal Component Analysis Algorithm for Dimensionality Reduction.”</span> <em>Journal of Soft Computing and Data Mining</em> 2 (1): 20–30.
+</div>
+<div id="ref-kaggle_breast_cancer_image" class="csl-entry" role="listitem">
+Repository, UCI Machine Learning. 2023. <span>“Breast Cancer Wisconsin (Diagnostic) Data Set.”</span> <a href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" class="uri">https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data</a>.
+</div>
+<div id="ref-romano2023modeling" class="csl-entry" role="listitem">
+Romano, Roni, Alexander Barbul, and Rafi Korenstein. 2023. <span>“From Modeling Dose-Response Relationships to Improved Performance of Decision-Tree Classifiers for Predictive Toxicology of Nanomaterials.”</span> <em>Computational Toxicology</em> 27: 100277.
+</div>
+<div id="ref-wolberg_breast_1993" class="csl-entry" role="listitem">
+Wolberg, William H., and Olvi L. Mangasarian. 1993. <span>“Breast Cancer Wisconsin (Diagnostic).”</span> UCI Machine Learning Repository.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
