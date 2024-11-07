@@ -1,6 +1,5 @@
 ---
 title: "Part 3: Command Line Operations on students.csv"
-author: "Guan Gui"
 format: html
 ---
 

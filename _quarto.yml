@@ -11,10 +11,10 @@ website:
         text: About
       - href: example_analysis.qmd
         text: Example Analysis
-      - href: part1.qmd
-        text: Defining My Scientific Brand
-      - href: part3.qmd
-        text: Command Line Operations
+      # - href: part1.qmd
+      #   text: Defining My Scientific Brand
+      # - href: part3.qmd
+      #   text: Command Line Operations
 
 format:
   html:
