@@ -176,22 +176,27 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary"><span class="header-section-number">2</span> Data Dictionary</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling"><span class="header-section-number">3</span> Data Wrangling</a>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">1</span> Background</a>
   <ul class="collapse">
-  <li><a href="#functions-used" id="toc-functions-used" class="nav-link" data-scroll-target="#functions-used"><span class="header-section-number">3.1</span> Functions Used</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary"><span class="header-section-number">1.2</span> Data Dictionary</a></li>
   </ul></li>
-  <li><a href="#target-variable-distribution" id="toc-target-variable-distribution" class="nav-link" data-scroll-target="#target-variable-distribution"><span class="header-section-number">4</span> Target Variable Distribution</a></li>
-  <li><a href="#faceted-plot-feature-distribution-by-diagnosis" id="toc-faceted-plot-feature-distribution-by-diagnosis" class="nav-link" data-scroll-target="#faceted-plot-feature-distribution-by-diagnosis"><span class="header-section-number">5</span> Faceted Plot: Feature Distribution by Diagnosis</a></li>
-  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis"><span class="header-section-number">6</span> Correlation Analysis</a></li>
-  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="header-section-number">7</span> Principal Component Analysis (PCA)</a></li>
-  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">8</span> Data Splitting</a></li>
-  <li><a href="#model-training-random-forest" id="toc-model-training-random-forest" class="nav-link" data-scroll-target="#model-training-random-forest"><span class="header-section-number">9</span> Model Training: Random Forest</a></li>
-  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation"><span class="header-section-number">10</span> Model Evaluation</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">11</span> Summary</a></li>
-  <li><a href="#functions-used-1" id="toc-functions-used-1" class="nav-link" data-scroll-target="#functions-used-1"><span class="header-section-number">12</span> Functions Used</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">13</span> Checklist</a></li>
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda"><span class="header-section-number">2</span> Exploratory Data Analysis (EDA)</a>
+  <ul class="collapse">
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling"><span class="header-section-number">2.1</span> Data Wrangling</a></li>
+  <li><a href="#target-variable-distribution" id="toc-target-variable-distribution" class="nav-link" data-scroll-target="#target-variable-distribution"><span class="header-section-number">2.2</span> Target Variable Distribution</a></li>
+  <li><a href="#box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter" id="toc-box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter" class="nav-link" data-scroll-target="#box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter"><span class="header-section-number">2.3</span> Box Plot: Feature Distribution by Diagnosis (Concave Points and Perimeter)</a></li>
+  </ul></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling"><span class="header-section-number">3</span> Modeling</a>
+  <ul class="collapse">
+  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="header-section-number">3.1</span> Principal Component Analysis (PCA)</a></li>
+  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">3.2</span> Data Splitting</a></li>
+  <li><a href="#model-training-random-forest" id="toc-model-training-random-forest" class="nav-link" data-scroll-target="#model-training-random-forest"><span class="header-section-number">3.3</span> Model Training: Random Forest</a></li>
+  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation"><span class="header-section-number">3.4</span> Model Evaluation</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4</span> Summary</a></li>
+  <li><a href="#functions-used" id="toc-functions-used" class="nav-link" data-scroll-target="#functions-used"><span class="header-section-number">5</span> Functions Used</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">6</span> Checklist</a></li>
   </ul>
 </nav>
     </div>
@@ -223,11 +228,20 @@ div.csl-indent {
 </header>
 
 
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to determine which features are most effective in distinguishing malignant from benign tumors. Specifically, we aim to answer the question: <strong>What variables are most influential in predicting breast cancer diagnosis?</strong><br>
-This analysis is intended for <strong>medical researchers and clinicians</strong> interested in exploring diagnostic features that can assist in early detection and classification of breast cancer tumors. The dataset was originally collected by Dr.&nbsp;William H. Wolberg and is available from the <a href="https://doi.org/10.24432/C5DW2B">UCI Machine Learning Repository</a> <span class="citation" data-cites="wolberg_breast_1993">(<a href="#ref-wolberg_breast_1993" role="doc-biblioref">Wolberg and Mangasarian 1993</a>)</span>.<br>
-A complete data dictionary is provided below.</p>
+<section id="background" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="background"><span class="header-section-number">1</span> Background</h2>
+<section id="introduction" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h3>
+<p>This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to evaluate the <strong>Random Forest method’s performance in predicting breast cancer diagnosis</strong> and identify key variables that distinguish between malignant and benign tumors.</p>
+<p>The intended audience includes <strong>medical researchers and clinicians</strong> focused on diagnostic features that support early detection and classification of breast cancer.</p>
+<p>The dataset, originally collected by Dr.&nbsp;William H. Wolberg, is available through the <a href="https://doi.org/10.24432/C5DW2B">UCI Machine Learning Repository</a> <span class="citation" data-cites="wolberg_breast_1993">(<a href="#ref-wolberg_breast_1993" role="doc-biblioref">Wolberg and Mangasarian 1993</a>)</span>. The repository hosts detailed tumor measurements essential for assessing feature importance in classification tasks.</p>
+<p>Below is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set website, representing breast cancer cells <span class="citation" data-cites="kaggle_breast_cancer_image">(<a href="#ref-kaggle_breast_cancer_image" role="doc-biblioref">Repository 2023</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-cover.jpg" class="img-fluid figure-img"></p>
+<figcaption>Breast Cancer Cells</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -238,12 +252,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models.</p>
+<p>This analysis highlights diagnostic features in breast cancer, offering foundational insights that may support the development of advanced machine learning models.</p>
 </div>
 </div>
 </section>
-<section id="data-dictionary" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="data-dictionary"><span class="header-section-number">2</span> Data Dictionary</h2>
+<section id="data-dictionary" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="data-dictionary"><span class="header-section-number">1.2</span> Data Dictionary</h3>
+<p>The <strong>data dictionary</strong> below, detailing each variable’s description and relevance to the analysis, particularly in identifying differences between benign and malignant tumor characteristics.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
@@ -386,17 +401,12 @@ Note
 </tr>
 </tbody>
 </table>
-<p>For a complete data dictionary, refer to the <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">UCI Repository’s dataset description</a>.</p>
-<p>Below is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set, representing breast cancer cells <span class="citation" data-cites="kaggle_breast_cancer_image">(<a href="#ref-kaggle_breast_cancer_image" role="doc-biblioref">Repository 2023</a>)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-cover.jpg" class="img-fluid figure-img"></p>
-<figcaption>Breast Cancer Cells</figcaption>
-</figure>
-</div>
 </section>
-<section id="data-wrangling" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">3</span> Data Wrangling</h2>
+</section>
+<section id="exploratory-data-analysis-eda" class="level2 page-columns page-full" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exploratory-data-analysis-eda"><span class="header-section-number">2</span> Exploratory Data Analysis (EDA)</h2>
+<section id="data-wrangling" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">2.1</span> Data Wrangling</h3>
 <p>The data wrangling steps refine the Breast Cancer dataset for analysis.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -411,7 +421,7 @@ Tip
 <p>Correlations help identify features highly associated with tumor diagnosis, aiding in feature selection for the model.</p>
 </div>
 </div>
-<p>Steps:</p>
+<p><strong>Steps:</strong></p>
 <ol type="1">
 <li>Removed unnecessary columns (<code>id</code> and <code>X</code>) to focus on diagnostic features.</li>
 <li>Renamed the <code>diagnosis</code> column to <code>Diagnosis</code> for clarity.</li>
@@ -419,17 +429,16 @@ Tip
 <li>Converted the <code>Diagnosis</code> column into a factor with levels “B” (benign) and “M” (malignant).</li>
 <li>Calculated correlations with the diagnosis to identify highly predictive variables, retaining only those with correlation &gt; |0.3|.</li>
 </ol>
-<section id="functions-used" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="functions-used"><span class="header-section-number">3.1</span> Functions Used</h3>
+<p><strong>Functions Used:</strong></p>
 <ul>
-<li><strong><code>select()</code></strong>: Excludes specific columns and selects highly correlated variables.</li>
-<li><strong><code>rename()</code></strong>: Renames <code>diagnosis</code> to <code>Diagnosis</code> for consistency.</li>
-<li><strong><code>drop_na()</code></strong>: Removes rows with missing values.</li>
-<li><strong><code>mutate()</code></strong>: Creates or transforms columns, such as converting <code>Diagnosis</code> to a factor and creating a numeric version for correlation.</li>
-<li><strong><code>summarize()</code> + <code>across()</code></strong>: Calculates correlation values for each feature with <code>Diagnosis</code>.</li>
-<li><strong><code>pivot_longer()</code></strong>: Reshapes the data to make correlation results easier to filter.</li>
-<li><strong><code>arrange()</code></strong>: Sorts correlations by their absolute values.</li>
-<li><strong><code>filter()</code></strong>: Selects only variables with a high correlation to the target variable.</li>
+<li><code>select()</code>: Excludes specific columns and selects highly correlated variables.</li>
+<li><code>rename()</code>: Renames <code>diagnosis</code> to <code>Diagnosis</code> for consistency.</li>
+<li><code>drop_na()</code>: Removes rows with missing values.</li>
+<li><code>mutate()</code>: Creates or transforms columns, such as converting <code>Diagnosis</code> to a factor and creating a numeric version for correlation.</li>
+<li><code>summarize()</code> + <code>across()</code>**: Calculates correlation values for each feature with <code>Diagnosis</code>.</li>
+<li><code>pivot_longer()</code>: Reshapes the data to make correlation results easier to filter.</li>
+<li><code>arrange()</code>: Sorts correlations by their absolute values.</li>
+<li><code>filter()</code>: Selects only variables with a high correlation to the target variable.</li>
 </ul>
 <div class="cell">
 <details class="code-fold">
@@ -456,7 +465,14 @@ Tip
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print top 10 correlation variables</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>top_10_correlations <span class="ot">&lt;-</span> correlations <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_10_correlations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Top 10 Variables Most Correlated with Diagnosis:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Top 10 Variables Most Correlated with Diagnosis:</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_10_correlations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 2
@@ -475,46 +491,61 @@ Tip
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cor_threshold <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>high_corr_vars <span class="ot">&lt;-</span> correlations <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(correlation) <span class="sc">&gt;=</span> cor_threshold) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(variable)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only highly correlated variables in the original data</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(high_corr_vars), Diagnosis)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cor_threshold <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>high_corr_vars <span class="ot">&lt;-</span> correlations <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(correlation) <span class="sc">&gt;=</span> cor_threshold) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(variable)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only highly correlated variables in the original data</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(high_corr_vars), Diagnosis)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Dimensions of the Refined Dataset:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["concave.points_worst"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["perimeter_worst"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["concave.points_mean"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["radius_worst"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["perimeter_mean"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["area_worst"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["radius_mean"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["area_mean"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["concavity_mean"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["concavity_worst"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["compactness_mean"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["compactness_worst"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["radius_se"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["perimeter_se"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["area_se"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["texture_worst"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["smoothness_worst"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["symmetry_worst"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["texture_mean"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["concave.points_se"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["smoothness_mean"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["symmetry_mean"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["fractal_dimension_worst"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["Diagnosis"],"name":[24],"type":["fct"],"align":["left"]}],"data":[{"1":"0.2654","2":"184.60","3":"0.14710","4":"25.38","5":"122.80","6":"2019.0","7":"17.99","8":"1001.0","9":"0.3001","10":"0.7119","11":"0.27760","12":"0.6656","13":"1.0950","14":"8.589","15":"153.40","16":"17.33","17":"0.1622","18":"0.4601","19":"10.38","20":"0.01587","21":"0.11840","22":"0.2419","23":"0.11890","24":"M","_rn_":"1"},{"1":"0.1860","2":"158.80","3":"0.07017","4":"24.99","5":"132.90","6":"1956.0","7":"20.57","8":"1326.0","9":"0.0869","10":"0.2416","11":"0.07864","12":"0.1866","13":"0.5435","14":"3.398","15":"74.08","16":"23.41","17":"0.1238","18":"0.2750","19":"17.77","20":"0.01340","21":"0.08474","22":"0.1812","23":"0.08902","24":"M","_rn_":"2"},{"1":"0.2430","2":"152.50","3":"0.12790","4":"23.57","5":"130.00","6":"1709.0","7":"19.69","8":"1203.0","9":"0.1974","10":"0.4504","11":"0.15990","12":"0.4245","13":"0.7456","14":"4.585","15":"94.03","16":"25.53","17":"0.1444","18":"0.3613","19":"21.25","20":"0.02058","21":"0.10960","22":"0.2069","23":"0.08758","24":"M","_rn_":"3"},{"1":"0.2575","2":"98.87","3":"0.10520","4":"14.91","5":"77.58","6":"567.7","7":"11.42","8":"386.1","9":"0.2414","10":"0.6869","11":"0.28390","12":"0.8663","13":"0.4956","14":"3.445","15":"27.23","16":"26.50","17":"0.2098","18":"0.6638","19":"20.38","20":"0.01867","21":"0.14250","22":"0.2597","23":"0.17300","24":"M","_rn_":"4"},{"1":"0.1625","2":"152.20","3":"0.10430","4":"22.54","5":"135.10","6":"1575.0","7":"20.29","8":"1297.0","9":"0.1980","10":"0.4000","11":"0.13280","12":"0.2050","13":"0.7572","14":"5.438","15":"94.44","16":"16.67","17":"0.1374","18":"0.2364","19":"14.34","20":"0.01885","21":"0.10030","22":"0.1809","23":"0.07678","24":"M","_rn_":"5"},{"1":"0.1741","2":"103.40","3":"0.08089","4":"15.47","5":"82.57","6":"741.6","7":"12.45","8":"477.1","9":"0.1578","10":"0.5355","11":"0.17000","12":"0.5249","13":"0.3345","14":"2.217","15":"27.19","16":"23.75","17":"0.1791","18":"0.3985","19":"15.70","20":"0.01137","21":"0.12780","22":"0.2087","23":"0.12440","24":"M","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dimensions of the Refined Dataset:</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 569  24</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The refined dataset contains 569 rows and 24 columns, focusing on variables with significant correlations to the diagnosis. The ten variables most strongly correlated with breast cancer diagnosis are led by <code>concave.points_worst</code> (0.79) and <code>perimeter_worst</code> (0.78).</p>
 </div>
 </div>
 </section>
-</section>
-<section id="target-variable-distribution" class="level2 page-columns page-full" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="target-variable-distribution"><span class="header-section-number">4</span> Target Variable Distribution</h2>
+<section id="target-variable-distribution" class="level3 page-columns page-full" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="target-variable-distribution"><span class="header-section-number">2.2</span> Target Variable Distribution</h3>
 <p>This bar plot shows the distribution of benign and malignant diagnoses in the dataset.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the distribution of tumor diagnoses</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Diagnosis, <span class="at">fill =</span> Diagnosis)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat=</span><span class="st">'count'</span>, <span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Tumor Diagnoses in the Dataset"</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Benign tumors are more frequent than malignant tumors"</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"This plot shows the count of benign and malignant tumors in the dataset"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Tumor Diagnosis"</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count of Cases"</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"B"</span> <span class="ot">=</span> <span class="st">"#00CCCC"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"salmon"</span>)) <span class="sc">+</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the distribution of tumor diagnoses</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Diagnosis, <span class="at">fill =</span> Diagnosis)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat=</span><span class="st">'count'</span>, <span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Tumor Diagnoses in the Dataset"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Benign tumors are more frequent than malignant tumors"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"This plot shows the count of benign and malignant tumors in the dataset"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Tumor Diagnosis"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count of Cases"</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"B"</span> <span class="ot">=</span> <span class="st">"#00CCCC"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"salmon"</span>)) <span class="sc">+</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -528,25 +559,27 @@ Tip
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.</p>
 </div></div></section>
-<section id="faceted-plot-feature-distribution-by-diagnosis" class="level2 page-columns page-full" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="faceted-plot-feature-distribution-by-diagnosis"><span class="header-section-number">5</span> Faceted Plot: Feature Distribution by Diagnosis</h2>
-<p>This faceted histogram compares the distribution of <code>radius_mean</code> between benign and malignant tumors.</p>
+<section id="box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter" class="level3 page-columns page-full" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter"><span class="header-section-number">2.3</span> Box Plot: Feature Distribution by Diagnosis (Concave Points and Perimeter)</h3>
+<p>This box plot compares the distribution of concave.points_mean and perimeter_mean between benign and malignant tumors, both of which are highly correlated with the target variable.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare the distribution of 'radius_mean' across diagnoses using faceting</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> radius_mean, <span class="at">fill =</span> Diagnosis)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Diagnosis) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Distribution of Mean Radius by Tumor Diagnosis"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"Malignant tumors tend to have a larger mean radius"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Faceted histograms showing 'radius_mean' distribution for each diagnosis"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"Mean Radius"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="st">"Frequency"</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"B"</span> <span class="ot">=</span> <span class="st">"#00CCCC"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"salmon"</span>)) <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare the distribution of 'concave.points_mean' and 'perimeter_mean' across diagnoses using a box plot</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Diagnosis, concave.points_mean, perimeter_mean) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Diagnosis, <span class="at">names_to =</span> <span class="st">"Feature"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>), </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Diagnosis, <span class="at">y =</span> Value, <span class="at">fill =</span> Diagnosis)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Feature, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Selected Features by Tumor Diagnosis"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Both concave.points_mean and perimeter_mean tend to be higher in malignant (M) tumors"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Box plots showing the distribution of concave.points_mean and perimeter_mean by tumor diagnosis."</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Tumor Diagnosis"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Feature Value"</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"B"</span> <span class="ot">=</span> <span class="st">"#00CCCC"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"salmon"</span>)) <span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -558,48 +591,40 @@ Tip
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>The faceted histograms reveal that malignant tumors generally have higher mean radius values compared to benign tumors.</p>
+<p>Both concave.points_mean and perimeter_mean are notably higher in malignant tumors, indicating their potential as diagnostic markers for identifying malignancy.</p>
 </div></div></section>
-<section id="correlation-analysis" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="correlation-analysis"><span class="header-section-number">6</span> Correlation Analysis</h2>
-<pre><code>#| label: correlation
-#| fig-height: 10
-#| fig-width: 10
-#| warning: false
-# Compute and visualize correlations among numeric features
-correlations &lt;- cor(data %&gt;% select(-Diagnosis), method = "pearson")
-corrplot(correlations, number.cex = .6, method = "number", type = "upper", tl.cex=1, tl.col = "black", col = COL2("RdYlBu"))</code></pre>
-<p><strong>Summary:</strong> Strong correlations are seen among features like radius, perimeter, and area, indicating redundancy that can be reduced.</p>
 </section>
-<section id="principal-component-analysis-pca" class="level2 page-columns page-full" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">7</span> Principal Component Analysis (PCA)</h2>
+<section id="modeling" class="level2 page-columns page-full" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="modeling"><span class="header-section-number">3</span> Modeling</h2>
+<section id="principal-component-analysis-pca" class="level3 page-columns page-full" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">3.1</span> Principal Component Analysis (PCA)</h3>
 <p>The dataset’s dimensionality was significantly reduced using PCA, which allows the identification and removal of less relevant features without significant loss of information <span class="citation" data-cites="hasan2021review">(<a href="#ref-hasan2021review" role="doc-biblioref">Hasan and Abdulazeez 2021</a>)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform PCA for dimensionality reduction</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Diagnosis), <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance explained by each component</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>var_explained <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Component =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pca<span class="sc">$</span>sdev), </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variance =</span> (pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>, </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Proportion =</span> (pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>), </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cumulative =</span> <span class="fu">cumsum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Scree Plot</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(var_explained[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,], <span class="fu">aes</span>(<span class="at">x =</span> Component, <span class="at">y =</span> Proportion)) <span class="sc">+</span> </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"salmon"</span>) <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Explained Variance by Principal Components"</span>,</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The first few components capture the majority of variance"</span>,</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Scree plot showing the variance explained by the first 10 components"</span>,</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Principal Component"</span>,</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Explained Variance"</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform PCA for dimensionality reduction</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Diagnosis), <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance explained by each component</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>var_explained <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Component =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pca<span class="sc">$</span>sdev), </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variance =</span> (pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Proportion =</span> (pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>), </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cumulative =</span> <span class="fu">cumsum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>((pca<span class="sc">$</span>sdev)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Scree Plot</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(var_explained[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,], <span class="fu">aes</span>(<span class="at">x =</span> Component, <span class="at">y =</span> Proportion)) <span class="sc">+</span> </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"salmon"</span>) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Explained Variance by Principal Components"</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The first few components capture the majority of variance"</span>,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Scree plot showing the variance explained by the first 10 components"</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Principal Component"</span>,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Explained Variance"</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -613,56 +638,57 @@ corrplot(correlations, number.cex = .6, method = "number", type = "upper", tl.ce
 <div class="no-row-height column-margin column-container"><div class="">
 <p>PCA helped identify six components explaining 88.76% of variance.</p>
 </div></div></section>
-<section id="data-splitting" class="level2 page-columns page-full" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="data-splitting"><span class="header-section-number">8</span> Data Splitting</h2>
+<section id="data-splitting" class="level3 page-columns page-full" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="data-splitting"><span class="header-section-number">3.2</span> Data Splitting</h3>
+<p>The data was split into an 80:20 ratio for the training and test sets.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and testing sets</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>split <span class="ot">&lt;-</span> <span class="fu">sample.split</span>(data<span class="sc">$</span>Diagnosis, <span class="at">SplitRatio =</span> <span class="fl">0.8</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and testing sets</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>split <span class="ot">&lt;-</span> <span class="fu">sample.split</span>(data<span class="sc">$</span>Diagnosis, <span class="at">SplitRatio =</span> <span class="fl">0.8</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.</p>
 </div></div></section>
-<section id="model-training-random-forest" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="model-training-random-forest"><span class="header-section-number">9</span> Model Training: Random Forest</h2>
+<section id="model-training-random-forest" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="model-training-random-forest"><span class="header-section-number">3.3</span> Model Training: Random Forest</h3>
 <p>The Random Forest method works by constructing a large number of decision trees during training and outputting the most common class <span class="citation" data-cites="romano2023modeling">(<a href="#ref-romano2023modeling" role="doc-biblioref">Romano, Barbul, and Korenstein 2023</a>)</span>. A Random Forest model with 10-fold cross-validation is trained to predict tumor diagnoses based on the dataset features, using 1000 trees.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"cv"</span>, <span class="at">number =</span> <span class="dv">10</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Forest</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>rf_model <span class="ot">&lt;-</span> <span class="fu">train</span>(Diagnosis <span class="sc">~</span> ., <span class="at">data =</span> train, <span class="at">method =</span> <span class="st">"rf"</span>, <span class="at">ntree =</span> <span class="dv">1000</span>, <span class="at">trControl =</span> control, <span class="at">importance =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up cross-validation</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>control <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"cv"</span>, <span class="at">number =</span> <span class="dv">10</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Forest</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>rf_model <span class="ot">&lt;-</span> <span class="fu">train</span>(Diagnosis <span class="sc">~</span> ., <span class="at">data =</span> train, <span class="at">method =</span> <span class="st">"rf"</span>, <span class="at">ntree =</span> <span class="dv">1000</span>, <span class="at">trControl =</span> control, <span class="at">importance =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="model-evaluation" class="level2 page-columns page-full" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">10</span> Model Evaluation</h2>
+<section id="model-evaluation" class="level3 page-columns page-full" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">3.4</span> Model Evaluation</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the Random Forest model on the test set</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>evaluate_model <span class="ot">&lt;-</span> <span class="cf">function</span>(model, test_data) {</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> test_data)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  cm <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(predictions, test_data<span class="sc">$</span>Diagnosis)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  auc_value <span class="ot">&lt;-</span> <span class="fu">auc</span>(<span class="fu">roc</span>(test_data<span class="sc">$</span>Diagnosis, <span class="fu">as.numeric</span>(predictions)))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Accuracy =</span> cm<span class="sc">$</span>overall[<span class="st">'Accuracy'</span>],</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm<span class="sc">$</span>byClass[<span class="st">'Sensitivity'</span>],</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm<span class="sc">$</span>byClass[<span class="st">'Specificity'</span>],</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">AUC =</span> auc_value</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>rf_results <span class="ot">&lt;-</span> <span class="fu">evaluate_model</span>(rf_model, test)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>rf_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the Random Forest model on the test set</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>evaluate_model <span class="ot">&lt;-</span> <span class="cf">function</span>(model, test_data) {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> test_data)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  cm <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(predictions, test_data<span class="sc">$</span>Diagnosis)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  auc_value <span class="ot">&lt;-</span> <span class="fu">auc</span>(<span class="fu">roc</span>(test_data<span class="sc">$</span>Diagnosis, <span class="fu">as.numeric</span>(predictions)))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Accuracy =</span> cm<span class="sc">$</span>overall[<span class="st">'Accuracy'</span>],</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sensitivity =</span> cm<span class="sc">$</span>byClass[<span class="st">'Sensitivity'</span>],</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Specificity =</span> cm<span class="sc">$</span>byClass[<span class="st">'Specificity'</span>],</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">AUC =</span> auc_value</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>rf_results <span class="ot">&lt;-</span> <span class="fu">evaluate_model</span>(rf_model, test)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>rf_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div data-pagedtable="false">
@@ -676,20 +702,21 @@ corrplot(correlations, number.cex = .6, method = "number", type = "upper", tl.ce
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases.</p>
 </div></div></section>
-<section id="summary" class="level2" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="summary"><span class="header-section-number">11</span> Summary</h2>
+</section>
+<section id="summary" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="summary"><span class="header-section-number">4</span> Summary</h2>
 <p>The analysis of the Breast Cancer Wisconsin (Diagnostic) dataset revealed that features such as <code>concave.points_worst</code>, <code>perimeter_worst</code>, and <code>concave.points_mean</code> exhibit strong correlations with tumor diagnosis. Dimensionality reduction through PCA indicated that a few principal components account for the majority of variance, efficiently reducing feature redundancy. A Random Forest model, trained and evaluated on the dataset, achieved high accuracy and AUC, demonstrating its effectiveness in tumor classification. These findings provide essential insights into diagnostic markers, supporting potential advancements in early cancer detection and classification models.</p>
 </section>
-<section id="functions-used-1" class="level2" data-number="12">
-<h2 data-number="12" class="anchored" data-anchor-id="functions-used-1"><span class="header-section-number">12</span> Functions Used</h2>
+<section id="functions-used" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="functions-used"><span class="header-section-number">5</span> Functions Used</h2>
 <ul>
 <li><strong>dplyr</strong>: <code>select</code>, <code>rename</code>, <code>filter</code>, <code>mutate</code>, <code>count</code>, <code>arrange</code></li>
 <li><strong>tidyr</strong>: <code>pivot_longer</code></li>
-<li><strong>ggplot2</strong>: <code>geom_bar</code>, <code>geom_histogram</code>, <code>geom_line</code>, <code>facet_wrap</code></li>
+<li><strong>ggplot2</strong>: <code>geom_bar</code>, <code>geom_boxplot</code>, <code>geom_line</code>, <code>geom_point</code>, <code>facet_wrap</code></li>
 </ul>
 </section>
-<section id="checklist" class="level2" data-number="13">
-<h2 data-number="13" class="anchored" data-anchor-id="checklist"><span class="header-section-number">13</span> Checklist</h2>
+<section id="checklist" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="checklist"><span class="header-section-number">6</span> Checklist</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" checked=""><strong>State the Question</strong>: Describe the main question being addressed in the analysis.</label></li>
 <li><label><input type="checkbox" checked=""><strong>Audience</strong>: Identify the intended audience for this analysis.</label></li>

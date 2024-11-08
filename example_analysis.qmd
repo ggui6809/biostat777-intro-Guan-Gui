@@ -31,17 +31,27 @@ library(caTools)
 library(randomForest)
 ```
 
-## Introduction
+## Background
 
-This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to determine which features are most effective in distinguishing malignant from benign tumors. Specifically, we aim to answer the question: **What variables are most influential in predicting breast cancer diagnosis?**  
-This analysis is intended for **medical researchers and clinicians** interested in exploring diagnostic features that can assist in early detection and classification of breast cancer tumors. The dataset was originally collected by Dr. William H. Wolberg and is available from the [UCI Machine Learning Repository](https://doi.org/10.24432/C5DW2B) [@wolberg_breast_1993].  
-A complete data dictionary is provided below.
+### Introduction
+
+This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to evaluate the **Random Forest method's performance in predicting breast cancer diagnosis** and identify key variables that distinguish between malignant and benign tumors.
+
+The intended audience includes **medical researchers and clinicians** focused on diagnostic features that support early detection and classification of breast cancer. 
+
+The dataset, originally collected by Dr. William H. Wolberg, is available through the [UCI Machine Learning Repository](https://doi.org/10.24432/C5DW2B) [@wolberg_breast_1993]. The repository hosts detailed tumor measurements essential for assessing feature importance in classification tasks.
+
+Below is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set website, representing breast cancer cells [@kaggle_breast_cancer_image].
+
+![Breast Cancer Cells](https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-cover.jpg)
 
 ::: {.callout-note}
-This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models.
+This analysis highlights diagnostic features in breast cancer, offering foundational insights that may support the development of advanced machine learning models.
 :::
 
-## Data Dictionary
+### Data Dictionary
+
+The **data dictionary** below, detailing each variable's description and relevance to the analysis, particularly in identifying differences between benign and malignant tumor characteristics.
 
 | Variable                 | Description                                                                            |
 |--------------------------|----------------------------------------------------------------------------------------|
@@ -78,13 +88,9 @@ This analysis provides insights into diagnostic features in breast cancer, poten
 | `symmetry_worst`         | Worst or largest value of symmetry                                                     |
 | `fractal_dimension_worst`| Worst or largest value of fractal dimension                                            |
 
-For a complete data dictionary, refer to the [UCI Repository's dataset description](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)).
+## Exploratory Data Analysis (EDA)
 
-Below is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set, representing breast cancer cells [@kaggle_breast_cancer_image].
-
-![Breast Cancer Cells](https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-cover.jpg)
-
-## Data Wrangling
+### Data Wrangling
 
 The data wrangling steps refine the Breast Cancer dataset for analysis.
 
@@ -92,7 +98,7 @@ The data wrangling steps refine the Breast Cancer dataset for analysis.
 Correlations help identify features highly associated with tumor diagnosis, aiding in feature selection for the model. 
 :::
 
-Steps:
+**Steps:**
 
 1. Removed unnecessary columns (`id` and `X`) to focus on diagnostic features.
 2. Renamed the `diagnosis` column to `Diagnosis` for clarity.
@@ -101,16 +107,16 @@ Steps:
 5. Calculated correlations with the diagnosis to identify highly predictive variables, retaining only those with correlation > |0.3|.
 
 
-### Functions Used
+**Functions Used:**
 
-- **`select()`**: Excludes specific columns and selects highly correlated variables.
-- **`rename()`**: Renames `diagnosis` to `Diagnosis` for consistency.
-- **`drop_na()`**: Removes rows with missing values.
-- **`mutate()`**: Creates or transforms columns, such as converting `Diagnosis` to a factor and creating a numeric version for correlation.
-- **`summarize()` + `across()`**: Calculates correlation values for each feature with `Diagnosis`.
-- **`pivot_longer()`**: Reshapes the data to make correlation results easier to filter.
-- **`arrange()`**: Sorts correlations by their absolute values.
-- **`filter()`**: Selects only variables with a high correlation to the target variable.
+- `select()`: Excludes specific columns and selects highly correlated variables.
+- `rename()`: Renames `diagnosis` to `Diagnosis` for consistency.
+- `drop_na()`: Removes rows with missing values.
+- `mutate()`: Creates or transforms columns, such as converting `Diagnosis` to a factor and creating a numeric version for correlation.
+- `summarize()` + `across()`**: Calculates correlation values for each feature with `Diagnosis`.
+- `pivot_longer()`: Reshapes the data to make correlation results easier to filter.
+- `arrange()`: Sorts correlations by their absolute values.
+- `filter()`: Selects only variables with a high correlation to the target variable.
 
 ```{r}
 #| label: descriptive-statistics
@@ -138,6 +144,7 @@ correlations <- data_numeric %>%
 
 # Print top 10 correlation variables
 top_10_correlations <- correlations %>% head(10)
+cat("Top 10 Variables Most Correlated with Diagnosis:\n")
 print(top_10_correlations)
 
 cor_threshold <- 0.3
@@ -149,11 +156,15 @@ high_corr_vars <- correlations %>%
 data <- data %>%
   select(all_of(high_corr_vars), Diagnosis)
 
-head(data)
+cat("Dimensions of the Refined Dataset:\n")
+dim(data)
 ```
 
+::: {.callout-note}
+The refined dataset contains 569 rows and 24 columns, focusing on variables with significant correlations to the diagnosis. The ten variables most strongly correlated with breast cancer diagnosis are led by `concave.points_worst` (0.79) and `perimeter_worst` (0.78).
+:::
 
-## Target Variable Distribution
+### Target Variable Distribution
 This bar plot shows the distribution of benign and malignant diagnoses in the dataset.
 
 ```{r}
@@ -180,49 +191,39 @@ ggplot(data, aes(x = Diagnosis, fill = Diagnosis)) +
 Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.
 ::: 
 
-## Faceted Plot: Feature Distribution by Diagnosis
+### Box Plot: Feature Distribution by Diagnosis (Concave Points and Perimeter)
 
-This faceted histogram compares the distribution of `radius_mean` between benign and malignant tumors.
+This box plot compares the distribution of concave.points_mean and perimeter_mean between benign and malignant tumors, both of which are highly correlated with the target variable. 
 
 ```{r}
 #| label: faceted-plot
 #| fig-height: 6
 #| fig-width: 8
 #| warning: false
-# Compare the distribution of 'radius_mean' across diagnoses using faceting
-ggplot(data, aes(x = radius_mean, fill = Diagnosis)) +
-  geom_histogram(binwidth = 0.5, alpha = 0.7, position = "identity") +
-  facet_wrap(~ Diagnosis) +
+# Compare the distribution of 'concave.points_mean' and 'perimeter_mean' across diagnoses using a box plot
+ggplot(data %>% select(Diagnosis, concave.points_mean, perimeter_mean) %>%
+         pivot_longer(cols = -Diagnosis, names_to = "Feature", values_to = "Value"), 
+       aes(x = Diagnosis, y = Value, fill = Diagnosis)) +
+  geom_boxplot(alpha = 0.7) +
+  facet_wrap(~ Feature, scales = "free") +
   labs(
-  title = "Distribution of Mean Radius by Tumor Diagnosis",
-  subtitle = "Malignant tumors tend to have a larger mean radius",
-  caption = "Faceted histograms showing 'radius_mean' distribution for each diagnosis",
-  x = "Mean Radius",
-  y = "Frequency"
+    title = "Distribution of Selected Features by Tumor Diagnosis",
+    subtitle = "Both concave.points_mean and perimeter_mean tend to be higher in malignant (M) tumors",
+    caption = "Box plots showing the distribution of concave.points_mean and perimeter_mean by tumor diagnosis.",
+    x = "Tumor Diagnosis",
+    y = "Feature Value"
   ) +
   scale_fill_manual(values = c("B" = "#00CCCC", "M" = "salmon")) +
   theme_minimal()
 ```
 
 ::: {.column-margin}
-The faceted histograms reveal that malignant tumors generally have higher mean radius values compared to benign tumors.
+Both concave.points_mean and perimeter_mean are notably higher in malignant tumors, indicating their potential as diagnostic markers for identifying malignancy.
 ::: 
 
-## Correlation Analysis
+## Modeling
 
-```
-#| label: correlation
-#| fig-height: 10
-#| fig-width: 10
-#| warning: false
-# Compute and visualize correlations among numeric features
-correlations <- cor(data %>% select(-Diagnosis), method = "pearson")
-corrplot(correlations, number.cex = .6, method = "number", type = "upper", tl.cex=1, tl.col = "black", col = COL2("RdYlBu"))
-```
-
-**Summary:** Strong correlations are seen among features like radius, perimeter, and area, indicating redundancy that can be reduced.
-
-## Principal Component Analysis (PCA)
+### Principal Component Analysis (PCA)
 
 The dataset's dimensionality was significantly reduced using PCA, which allows the identification and removal of less relevant features without significant loss of information [@hasan2021review].
 
@@ -260,7 +261,9 @@ ggplot(var_explained[1:10,], aes(x = Component, y = Proportion)) +
 PCA helped identify six components explaining 88.76% of variance.
 :::
 
-## Data Splitting
+### Data Splitting
+
+The data was split into an 80:20 ratio for the training and test sets.
 
 ```{r}
 #| label: data-split
@@ -277,7 +280,7 @@ test <- subset(data, split == FALSE)
 The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.
 :::
 
-## Model Training: Random Forest
+### Model Training: Random Forest
 
 The Random Forest method works by constructing a large number of decision trees during training and outputting the most common class [@romano2023modeling]. A Random Forest model with 10-fold cross-validation is trained to predict tumor diagnoses based on the dataset features, using 1000 trees.
 
@@ -291,7 +294,7 @@ control <- trainControl(method = "cv", number = 10)
 rf_model <- train(Diagnosis ~ ., data = train, method = "rf", ntree = 1000, trControl = control, importance = TRUE)
 ```
 
-## Model Evaluation
+### Model Evaluation
 
 ```{r}
 #| label: model-evaluation
@@ -325,7 +328,7 @@ The analysis of the Breast Cancer Wisconsin (Diagnostic) dataset revealed that f
 
 - **dplyr**: `select`, `rename`, `filter`, `mutate`, `count`, `arrange`
 - **tidyr**: `pivot_longer`
-- **ggplot2**: `geom_bar`, `geom_histogram`, `geom_line`, `facet_wrap`
+- **ggplot2**: `geom_bar`, `geom_boxplot`, `geom_line`, `geom_point`, `facet_wrap`
 
 ## Checklist
 
