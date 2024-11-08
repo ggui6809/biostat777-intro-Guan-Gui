@@ -37,7 +37,9 @@ This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to d
 This analysis is intended for **medical researchers and clinicians** interested in exploring diagnostic features that can assist in early detection and classification of breast cancer tumors. The dataset was originally collected by Dr. William H. Wolberg and is available from the [UCI Machine Learning Repository](https://doi.org/10.24432/C5DW2B) [@wolberg_breast_1993].  
 A complete data dictionary is provided below.
 
-> **Note**: This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models.
+::: {.callout-note}
+This analysis provides insights into diagnostic features in breast cancer, potentially guiding more advanced machine learning models.
+:::
 
 ## Data Dictionary
 
@@ -82,20 +84,74 @@ Below is an image from the Kaggle Breast Cancer Wisconsin (Diagnostic) Data Set,
 
 ![Breast Cancer Cells](https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-cover.jpg)
 
-## Descriptive Statistics
+## Data Wrangling
+
+The data wrangling steps refine the Breast Cancer dataset for analysis.
+
+::: {.callout-tip} 
+Correlations help identify features highly associated with tumor diagnosis, aiding in feature selection for the model. 
+:::
+
+Steps:
+
+1. Removed unnecessary columns (`id` and `X`) to focus on diagnostic features.
+2. Renamed the `diagnosis` column to `Diagnosis` for clarity.
+3. Dropped rows with missing values to ensure complete cases.
+4. Converted the `Diagnosis` column into a factor with levels "B" (benign) and "M" (malignant).
+5. Calculated correlations with the diagnosis to identify highly predictive variables, retaining only those with correlation > |0.3|.
+
+
+### Functions Used
+
+- **`select()`**: Excludes specific columns and selects highly correlated variables.
+- **`rename()`**: Renames `diagnosis` to `Diagnosis` for consistency.
+- **`drop_na()`**: Removes rows with missing values.
+- **`mutate()`**: Creates or transforms columns, such as converting `Diagnosis` to a factor and creating a numeric version for correlation.
+- **`summarize()` + `across()`**: Calculates correlation values for each feature with `Diagnosis`.
+- **`pivot_longer()`**: Reshapes the data to make correlation results easier to filter.
+- **`arrange()`**: Sorts correlations by their absolute values.
+- **`filter()`**: Selects only variables with a high correlation to the target variable.
 
 ```{r}
 #| label: descriptive-statistics
 #| echo: true
 #| warning: false
-# Introduction: Load and inspect the first few rows of the dataset
+# Load data
 data <- read.csv("example_analysis_data.csv")
-data <- data %>% select(-id, -X) %>% rename(Diagnosis = diagnosis)
-data$Diagnosis <- factor(data$Diagnosis, levels = c("B", "M"))
-head(data)
 
-# Summary: The dataset includes various tumor measurements, with a diagnosis column indicating benign or malignant tumors.
+# Data wrangling with dplyr and tidyr
+data <- data %>%
+  select(-id, -X) %>%              
+  rename(Diagnosis = diagnosis) %>% 
+  drop_na() %>%                     
+  mutate(Diagnosis = factor(Diagnosis, levels = c("B", "M"))) 
+
+# Calculate correlations and arrange by correlation with target variable (Diagnosis)
+data_numeric <- data %>%
+  mutate(Diagnosis_num = as.numeric(Diagnosis) - 1) # Converts factor levels to 0 (B) and 1 (M)
+
+correlations <- data_numeric %>%
+  select(-Diagnosis) %>% 
+  summarize(across(-Diagnosis_num, ~ cor(., data_numeric$Diagnosis_num, use = "complete.obs"))) %>%
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "correlation") %>%
+  arrange(desc(abs(correlation)))
+
+# Print top 10 correlation variables
+top_10_correlations <- correlations %>% head(10)
+print(top_10_correlations)
+
+cor_threshold <- 0.3
+high_corr_vars <- correlations %>%
+  filter(abs(correlation) >= cor_threshold) %>%
+  pull(variable)
+
+# Keep only highly correlated variables in the original data
+data <- data %>%
+  select(all_of(high_corr_vars), Diagnosis)
+
+head(data)
 ```
+
 
 ## Target Variable Distribution
 This bar plot shows the distribution of benign and malignant diagnoses in the dataset.
@@ -120,7 +176,9 @@ ggplot(data, aes(x = Diagnosis, fill = Diagnosis)) +
   theme_minimal()
 ```
 
-**Summary:** Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.
+::: {.column-margin}
+Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.
+::: 
 
 ## Faceted Plot: Feature Distribution by Diagnosis
 
@@ -146,11 +204,13 @@ ggplot(data, aes(x = radius_mean, fill = Diagnosis)) +
   theme_minimal()
 ```
 
-Summary: The faceted histograms reveal that malignant tumors generally have higher mean radius values compared to benign tumors.
+::: {.column-margin}
+The faceted histograms reveal that malignant tumors generally have higher mean radius values compared to benign tumors.
+::: 
 
 ## Correlation Analysis
 
-```{r}
+```
 #| label: correlation
 #| fig-height: 10
 #| fig-width: 10
@@ -164,7 +224,7 @@ corrplot(correlations, number.cex = .6, method = "number", type = "upper", tl.ce
 
 ## Principal Component Analysis (PCA)
 
-[@hasan2021review]
+The dataset's dimensionality was significantly reduced using PCA, which allows the identification and removal of less relevant features without significant loss of information [@hasan2021review].
 
 ```{r}
 #| label: pca-analysis
@@ -196,8 +256,8 @@ ggplot(var_explained[1:10,], aes(x = Component, y = Proportion)) +
   )
 ```
 
-::: {.callout-margin}
-**Margin Note**: PCA helped identify six components explaining 88.76% of variance.
+::: {.column-margin}
+PCA helped identify six components explaining 88.76% of variance.
 :::
 
 ## Data Splitting
@@ -213,9 +273,13 @@ train <- subset(data, split == TRUE)
 test <- subset(data, split == FALSE)
 ```
 
-**Summary:** The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.
+::: {.column-margin}
+The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.
+:::
 
 ## Model Training: Random Forest
+
+The Random Forest method works by constructing a large number of decision trees during training and outputting the most common class [@romano2023modeling]. A Random Forest model with 10-fold cross-validation is trained to predict tumor diagnoses based on the dataset features, using 1000 trees.
 
 ```{r}
 #| label: model-training
@@ -226,8 +290,6 @@ control <- trainControl(method = "cv", number = 10)
 # Random Forest
 rf_model <- train(Diagnosis ~ ., data = train, method = "rf", ntree = 1000, trControl = control, importance = TRUE)
 ```
-
-**Summary:** A Random Forest model with cross-validation is trained to predict tumor diagnoses based on the dataset features.
 
 ## Model Evaluation
 
@@ -252,60 +314,32 @@ rf_results <- evaluate_model(rf_model, test)
 rf_results
 ```
 
-**Summary:** The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases.
-
-## ROC Curve for Random Forest Model
-
-[@romano2023modeling]
-
-```{r}
-#| label: roc-curve
-#| fig-height: 5
-#| fig-width: 10
-#| warning: false
-# Introduction: Plot the ROC curve to visualize model performance
-rf_roc <- roc(test$Diagnosis, as.numeric(predict(rf_model, newdata = test)))
-rf_df <- data.frame(Specificity = 1 - rf_roc$specificities, Sensitivity = rf_roc$sensitivities)
-
-# Plot ROC curve using ggplot2
-ggplot(rf_df, aes(x = Specificity, y = Sensitivity)) +
-  geom_line(size = 1, color = "green") +
-  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray") +
-  labs(
-    title = "ROC Curve for Random Forest Classification",
-    subtitle = "High AUC reflects strong model discrimination ability",
-    caption = "ROC curve shows sensitivity vs. specificity for the Random Forest model",
-    x = "1 - Specificity (False Positive Rate)",
-    y = "Sensitivity (True Positive Rate)"
-  ) +
-  theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  coord_cartesian(xlim = c(0, 1), ylim = c(0, 1))
-```
-
-**Summary:** The ROC curve with AUC ~0.98 indicates the Random Forest model’s high sensitivity and specificity in distinguishing malignant from benign tumors.
+::: {.column-margin}
+The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases.
+::: 
 
 ## Summary
-This analysis indicates that tumor characteristics such as radius, perimeter, and area are highly indicative of a malignant diagnosis. The data shows significant variability in these features between benign and malignant diagnoses, with malignant tumors generally exhibiting larger values. The correlation matrix highlights redundancy among some features, suggesting that dimensionality reduction could be beneficial for predictive modeling. Overall, this preliminary analysis provides insights that can guide further diagnostic model development.
-
-> **Conclusion**: This study identifies key features in breast cancer diagnosis, providing a foundation for future predictive analysis and model building in clinical applications.
+The analysis of the Breast Cancer Wisconsin (Diagnostic) dataset revealed that features such as `concave.points_worst`, `perimeter_worst`, and `concave.points_mean` exhibit strong correlations with tumor diagnosis. Dimensionality reduction through PCA indicated that a few principal components account for the majority of variance, efficiently reducing feature redundancy. A Random Forest model, trained and evaluated on the dataset, achieved high accuracy and AUC, demonstrating its effectiveness in tumor classification. These findings provide essential insights into diagnostic markers, supporting potential advancements in early cancer detection and classification models.
 
 ## Functions Used
-- **dplyr**: `select`, `rename`, `filter`, `mutate`, `summarize`
-- **ggplot2**: `geom_bar`, `geom_point`, `geom_line`
 
+- **dplyr**: `select`, `rename`, `filter`, `mutate`, `count`, `arrange`
+- **tidyr**: `pivot_longer`
+- **ggplot2**: `geom_bar`, `geom_histogram`, `geom_line`, `facet_wrap`
 
-```
+## Checklist
 
-### Summary of Adjustments
-- Only **Random Forest** model is retained.
-- Clear and complete **Introduction** with question, audience, and data source link.
-- **Data Dictionary** provided in a table with a link to UCI.
-- **Image** included.
-- **Data Wrangling** uses `dplyr` and `tidyr` functions.
-- **Plots** include `geom_bar`, `geom_line`, and `geom_point` functions with titles and labels.
-- **Faceting** is used in the data distribution.
-- **Two callout blocks** are provided (Note and Margin).
-- **ROC Curve** is generated with `ggplot2`.
-- **Bib file** for citations.
-- **Summary** included, and **Functions Used** list provided.
+- [x] **State the Question**: Describe the main question being addressed in the analysis.
+- [x] **Audience**: Identify the intended audience for this analysis.
+- [x] **Data Source**: Link to the source of the data and provide a brief description of its origin.
+- [x] **Data Dictionary**: Include a link to or display the data dictionary on the webpage.
+- [x] **Data Wrangling**: Use at least five unique functions from the `dplyr` or `tidyr` package for data wrangling.
+- [x] **Visualization**: Include at least three plots, each with different `geom_*()` functions from `ggplot2` (or equivalent).
+    - [x] **Plot Titles and Labels**: Ensure all plots have titles, subtitles, captions, and axis labels that are clear and understandable.
+    - [x] **Faceting**: Use `facet_grid()` or `facet_wrap()` in at least one plot for segmented views.
+- [x] **External Image or Table**: Include at least one image or table sourced from the web or locally saved (not self-created).
+- [x] **Callout Blocks**: Include at least two distinct callout blocks to emphasize important points.
+- [x] **References**: Use a `.bib` file with at least three unique citations (e.g., data sources, methods used).
+- [x] **Margin Content**: Add at least one piece of margin content to enhance the analysis.
+- [x] **Summary**: Conclude with a 4-6 sentence paragraph summarizing the analysis results.
+- [x] **Function List**: At the end, list each function used from `dplyr`, `tidyr`, and `ggplot2` to help verify that all requirements are met.
