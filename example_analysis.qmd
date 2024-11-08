@@ -1,6 +1,5 @@
 ---
 title: "Example Analysis: Breast Cancer Data"
-date: "`r Sys.Date()`"
 format:
   html:
     toc: true
@@ -88,7 +87,7 @@ The **data dictionary** below, detailing each variable's description and relevan
 | `symmetry_worst`         | Worst or largest value of symmetry                                                     |
 | `fractal_dimension_worst`| Worst or largest value of fractal dimension                                            |
 
-## Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis
 
 ### Data Wrangling
 
@@ -191,7 +190,7 @@ ggplot(data, aes(x = Diagnosis, fill = Diagnosis)) +
 Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.
 ::: 
 
-### Box Plot: Feature Distribution by Diagnosis (Concave Points and Perimeter)
+### Feature Distribution by Diagnosis
 
 This box plot compares the distribution of concave.points_mean and perimeter_mean between benign and malignant tumors, both of which are highly correlated with the target variable. 
 
@@ -223,7 +222,7 @@ Both concave.points_mean and perimeter_mean are notably higher in malignant tumo
 
 ## Modeling
 
-### Principal Component Analysis (PCA)
+### Principal Component Analysis
 
 The dataset's dimensionality was significantly reduced using PCA, which allows the identification and removal of less relevant features without significant loss of information [@hasan2021review].
 
@@ -276,11 +275,10 @@ train <- subset(data, split == TRUE)
 test <- subset(data, split == FALSE)
 ```
 
-::: {.column-margin}
 The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.
-:::
 
-### Model Training: Random Forest
+
+### Random Forest Model Training
 
 The Random Forest method works by constructing a large number of decision trees during training and outputting the most common class [@romano2023modeling]. A Random Forest model with 10-fold cross-validation is trained to predict tumor diagnoses based on the dataset features, using 1000 trees.
 
@@ -317,32 +315,32 @@ rf_results <- evaluate_model(rf_model, test)
 rf_results
 ```
 
-::: {.column-margin}
+::: {.callout-important}
 The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases.
-::: 
+:::
 
 ## Summary
 The analysis of the Breast Cancer Wisconsin (Diagnostic) dataset revealed that features such as `concave.points_worst`, `perimeter_worst`, and `concave.points_mean` exhibit strong correlations with tumor diagnosis. Dimensionality reduction through PCA indicated that a few principal components account for the majority of variance, efficiently reducing feature redundancy. A Random Forest model, trained and evaluated on the dataset, achieved high accuracy and AUC, demonstrating its effectiveness in tumor classification. These findings provide essential insights into diagnostic markers, supporting potential advancements in early cancer detection and classification models.
 
 ## Functions Used
 
-- **dplyr**: `select`, `rename`, `filter`, `mutate`, `count`, `arrange`
-- **tidyr**: `pivot_longer`
+- **dplyr**: `select`, `rename`, `filter`, `mutate`, `count`, `arrange`, `summarize`, `across`
+- **tidyr**: `pivot_longer`, `drop_na`
 - **ggplot2**: `geom_bar`, `geom_boxplot`, `geom_line`, `geom_point`, `facet_wrap`
 
 ## Checklist
 
-- [x] **State the Question**: Describe the main question being addressed in the analysis.
-- [x] **Audience**: Identify the intended audience for this analysis.
-- [x] **Data Source**: Link to the source of the data and provide a brief description of its origin.
-- [x] **Data Dictionary**: Include a link to or display the data dictionary on the webpage.
-- [x] **Data Wrangling**: Use at least five unique functions from the `dplyr` or `tidyr` package for data wrangling.
-- [x] **Visualization**: Include at least three plots, each with different `geom_*()` functions from `ggplot2` (or equivalent).
-    - [x] **Plot Titles and Labels**: Ensure all plots have titles, subtitles, captions, and axis labels that are clear and understandable.
-    - [x] **Faceting**: Use `facet_grid()` or `facet_wrap()` in at least one plot for segmented views.
-- [x] **External Image or Table**: Include at least one image or table sourced from the web or locally saved (not self-created).
-- [x] **Callout Blocks**: Include at least two distinct callout blocks to emphasize important points.
-- [x] **References**: Use a `.bib` file with at least three unique citations (e.g., data sources, methods used).
-- [x] **Margin Content**: Add at least one piece of margin content to enhance the analysis.
-- [x] **Summary**: Conclude with a 4-6 sentence paragraph summarizing the analysis results.
-- [x] **Function List**: At the end, list each function used from `dplyr`, `tidyr`, and `ggplot2` to help verify that all requirements are met.
+- [x] **State the Question**: Describe the main question being addressed in the analysis. ([Introduction](#introduction))
+- [x] **Audience**: Identify the intended audience for this analysis. ([Introduction](#introduction))
+- [x] **Data Source**: Link to the source of the data and provide a brief description of its origin. ([Introduction](#introduction))
+- [x] **Data Dictionary**: Include a link to or display the data dictionary on the webpage. ([Data Dictionary](#data-dictionary))
+- [x] **Data Wrangling**: Use at least five unique functions from the `dplyr` or `tidyr` package for data wrangling. ([Data Wrangling](#data-wrangling))
+- [x] **Visualization**: Include at least three plots, each with different `geom_*()` functions from `ggplot2` (or equivalent). ([Target Variable Distribution](#target-variable-distribution), [Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis), [Explained Variance by Principal Components](#explained-variance-by-principal-components))
+- [x] **Plot Titles and Labels**: Ensure all plots have titles, subtitles, captions, and axis labels that are clear and understandable. ([Target Variable Distribution](#target-variable-distribution), [Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis), [Explained Variance by Principal Components](#explained-variance-by-principal-components))
+- [x] **Faceting**: Use `facet_grid()` or `facet_wrap()` in at least one plot for segmented views. ([Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis))
+- [x] **External Image or Table**: Include at least one image or table sourced from the web or locally saved (not self-created). ([Introduction](#introduction))
+- [x] **Callout Blocks**: Include at least two distinct callout blocks to emphasize important points. ([Introduction](#introduction)), ([Data Wrangling](#data-wrangling), [Model Evaluation](#model-evaluation))
+- [x] **References**: Use a `.bib` file with at least three unique citations (e.g., data sources, methods used). ([Background](#background), [Principal Component Analysis](#principal-component-analysis), [Random Forest Model Training](#random-forest-model-training))
+- [x] **Margin Content**: Add at least one piece of margin content to enhance the analysis. ([Target Variable Distribution](#target-variable-distribution), [Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis), [Principal Component Analysis](#principal-component-analysis))
+- [x] **Summary**: Conclude with a 4-6 sentence paragraph summarizing the analysis results. ([Summary](#summary))
+- [x] **Function List**: At the end, list each function used from `dplyr`, `tidyr`, and `ggplot2` to help verify that all requirements are met. ([Functions Used](#functions-used))
