@@ -22,7 +22,7 @@ This repository includes all the necessary files for deploying a Quarto-based we
 
 ## How to View the Website
 
-The website is hosted on GitHub Pages and can be accessed via [Guan Gui Webiste](https://ggui6809.github.io/biostat777-intro-GuanGui.github.io/).
+The website is hosted on GitHub Pages and can be accessed via [Guan Gui Webiste](https://ggui6809.github.io/biostat777-intro-Guan-Gui/).
 
 ## Author
 
