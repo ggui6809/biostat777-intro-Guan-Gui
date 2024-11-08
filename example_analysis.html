@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-11-08">
 
 <title>Example Analysis: Breast Cancer Data – biostat777-intro-GuanGui</title>
 <style>
@@ -181,17 +180,17 @@ div.csl-indent {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
   <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary"><span class="header-section-number">1.2</span> Data Dictionary</a></li>
   </ul></li>
-  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda"><span class="header-section-number">2</span> Exploratory Data Analysis (EDA)</a>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">2</span> Exploratory Data Analysis</a>
   <ul class="collapse">
   <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling"><span class="header-section-number">2.1</span> Data Wrangling</a></li>
   <li><a href="#target-variable-distribution" id="toc-target-variable-distribution" class="nav-link" data-scroll-target="#target-variable-distribution"><span class="header-section-number">2.2</span> Target Variable Distribution</a></li>
-  <li><a href="#box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter" id="toc-box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter" class="nav-link" data-scroll-target="#box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter"><span class="header-section-number">2.3</span> Box Plot: Feature Distribution by Diagnosis (Concave Points and Perimeter)</a></li>
+  <li><a href="#feature-distribution-by-diagnosis" id="toc-feature-distribution-by-diagnosis" class="nav-link" data-scroll-target="#feature-distribution-by-diagnosis"><span class="header-section-number">2.3</span> Feature Distribution by Diagnosis</a></li>
   </ul></li>
   <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling"><span class="header-section-number">3</span> Modeling</a>
   <ul class="collapse">
-  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="header-section-number">3.1</span> Principal Component Analysis (PCA)</a></li>
+  <li><a href="#principal-component-analysis" id="toc-principal-component-analysis" class="nav-link" data-scroll-target="#principal-component-analysis"><span class="header-section-number">3.1</span> Principal Component Analysis</a></li>
   <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">3.2</span> Data Splitting</a></li>
-  <li><a href="#model-training-random-forest" id="toc-model-training-random-forest" class="nav-link" data-scroll-target="#model-training-random-forest"><span class="header-section-number">3.3</span> Model Training: Random Forest</a></li>
+  <li><a href="#random-forest-model-training" id="toc-random-forest-model-training" class="nav-link" data-scroll-target="#random-forest-model-training"><span class="header-section-number">3.3</span> Random Forest Model Training</a></li>
   <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation"><span class="header-section-number">3.4</span> Model Evaluation</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4</span> Summary</a></li>
@@ -213,12 +212,6 @@ div.csl-indent {
 <div class="quarto-title-meta column-page-left">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 8, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -403,8 +396,8 @@ Note
 </table>
 </section>
 </section>
-<section id="exploratory-data-analysis-eda" class="level2 page-columns page-full" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exploratory-data-analysis-eda"><span class="header-section-number">2</span> Exploratory Data Analysis (EDA)</h2>
+<section id="exploratory-data-analysis" class="level2 page-columns page-full" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">2</span> Exploratory Data Analysis</h2>
 <section id="data-wrangling" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">2.1</span> Data Wrangling</h3>
 <p>The data wrangling steps refine the Breast Cancer dataset for analysis.</p>
@@ -559,8 +552,8 @@ Note
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Benign tumors are more common than malignant tumors, providing a slightly imbalanced but sufficient dataset for training.</p>
 </div></div></section>
-<section id="box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter" class="level3 page-columns page-full" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="box-plot-feature-distribution-by-diagnosis-concave-points-and-perimeter"><span class="header-section-number">2.3</span> Box Plot: Feature Distribution by Diagnosis (Concave Points and Perimeter)</h3>
+<section id="feature-distribution-by-diagnosis" class="level3 page-columns page-full" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="feature-distribution-by-diagnosis"><span class="header-section-number">2.3</span> Feature Distribution by Diagnosis</h3>
 <p>This box plot compares the distribution of concave.points_mean and perimeter_mean between benign and malignant tumors, both of which are highly correlated with the target variable.</p>
 <div class="cell">
 <details class="code-fold">
@@ -596,8 +589,8 @@ Note
 </section>
 <section id="modeling" class="level2 page-columns page-full" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="modeling"><span class="header-section-number">3</span> Modeling</h2>
-<section id="principal-component-analysis-pca" class="level3 page-columns page-full" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">3.1</span> Principal Component Analysis (PCA)</h3>
+<section id="principal-component-analysis" class="level3 page-columns page-full" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="principal-component-analysis"><span class="header-section-number">3.1</span> Principal Component Analysis</h3>
 <p>The dataset’s dimensionality was significantly reduced using PCA, which allows the identification and removal of less relevant features without significant loss of information <span class="citation" data-cites="hasan2021review">(<a href="#ref-hasan2021review" role="doc-biblioref">Hasan and Abdulazeez 2021</a>)</span>.</p>
 <div class="cell">
 <details class="code-fold">
@@ -638,7 +631,7 @@ Note
 <div class="no-row-height column-margin column-container"><div class="">
 <p>PCA helped identify six components explaining 88.76% of variance.</p>
 </div></div></section>
-<section id="data-splitting" class="level3 page-columns page-full" data-number="3.2">
+<section id="data-splitting" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="data-splitting"><span class="header-section-number">3.2</span> Data Splitting</h3>
 <p>The data was split into an 80:20 ratio for the training and test sets.</p>
 <div class="cell">
@@ -651,12 +644,10 @@ Note
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, split <span class="sc">==</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="">
 <p>The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.</p>
-</div></div></section>
-<section id="model-training-random-forest" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="model-training-random-forest"><span class="header-section-number">3.3</span> Model Training: Random Forest</h3>
+</section>
+<section id="random-forest-model-training" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="random-forest-model-training"><span class="header-section-number">3.3</span> Random Forest Model Training</h3>
 <p>The Random Forest method works by constructing a large number of decision trees during training and outputting the most common class <span class="citation" data-cites="romano2023modeling">(<a href="#ref-romano2023modeling" role="doc-biblioref">Romano, Barbul, and Korenstein 2023</a>)</span>. A Random Forest model with 10-fold cross-validation is trained to predict tumor diagnoses based on the dataset features, using 1000 trees.</p>
 <div class="cell">
 <details class="code-fold">
@@ -669,7 +660,7 @@ Note
 </details>
 </div>
 </section>
-<section id="model-evaluation" class="level3 page-columns page-full" data-number="3.4">
+<section id="model-evaluation" class="level3" data-number="3.4">
 <h3 data-number="3.4" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">3.4</span> Model Evaluation</h3>
 <div class="cell">
 <details class="code-fold">
@@ -698,10 +689,20 @@ Note
 </div>
 </div>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The model achieves high accuracy and AUC, indicating effective classification of benign and malignant cases.</p>
-</div></div></section>
+</div>
+</div>
+</section>
 </section>
 <section id="summary" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="summary"><span class="header-section-number">4</span> Summary</h2>
@@ -710,30 +711,28 @@ Note
 <section id="functions-used" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="functions-used"><span class="header-section-number">5</span> Functions Used</h2>
 <ul>
-<li><strong>dplyr</strong>: <code>select</code>, <code>rename</code>, <code>filter</code>, <code>mutate</code>, <code>count</code>, <code>arrange</code></li>
-<li><strong>tidyr</strong>: <code>pivot_longer</code></li>
+<li><strong>dplyr</strong>: <code>select</code>, <code>rename</code>, <code>filter</code>, <code>mutate</code>, <code>count</code>, <code>arrange</code>, <code>summarize</code>, <code>across</code></li>
+<li><strong>tidyr</strong>: <code>pivot_longer</code>, <code>drop_na</code></li>
 <li><strong>ggplot2</strong>: <code>geom_bar</code>, <code>geom_boxplot</code>, <code>geom_line</code>, <code>geom_point</code>, <code>facet_wrap</code></li>
 </ul>
 </section>
 <section id="checklist" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="checklist"><span class="header-section-number">6</span> Checklist</h2>
 <ul class="task-list">
-<li><label><input type="checkbox" checked=""><strong>State the Question</strong>: Describe the main question being addressed in the analysis.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Audience</strong>: Identify the intended audience for this analysis.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Data Source</strong>: Link to the source of the data and provide a brief description of its origin.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Data Dictionary</strong>: Include a link to or display the data dictionary on the webpage.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Data Wrangling</strong>: Use at least five unique functions from the <code>dplyr</code> or <code>tidyr</code> package for data wrangling.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Visualization</strong>: Include at least three plots, each with different <code>geom_*()</code> functions from <code>ggplot2</code> (or equivalent).</label>
-<ul class="task-list">
-<li><label><input type="checkbox" checked=""><strong>Plot Titles and Labels</strong>: Ensure all plots have titles, subtitles, captions, and axis labels that are clear and understandable.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Faceting</strong>: Use <code>facet_grid()</code> or <code>facet_wrap()</code> in at least one plot for segmented views.</label></li>
-</ul></li>
-<li><label><input type="checkbox" checked=""><strong>External Image or Table</strong>: Include at least one image or table sourced from the web or locally saved (not self-created).</label></li>
-<li><label><input type="checkbox" checked=""><strong>Callout Blocks</strong>: Include at least two distinct callout blocks to emphasize important points.</label></li>
-<li><label><input type="checkbox" checked=""><strong>References</strong>: Use a <code>.bib</code> file with at least three unique citations (e.g., data sources, methods used).</label></li>
-<li><label><input type="checkbox" checked=""><strong>Margin Content</strong>: Add at least one piece of margin content to enhance the analysis.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Summary</strong>: Conclude with a 4-6 sentence paragraph summarizing the analysis results.</label></li>
-<li><label><input type="checkbox" checked=""><strong>Function List</strong>: At the end, list each function used from <code>dplyr</code>, <code>tidyr</code>, and <code>ggplot2</code> to help verify that all requirements are met.</label></li>
+<li><label><input type="checkbox" checked=""><strong>State the Question</strong>: Describe the main question being addressed in the analysis. (<a href="#introduction">Introduction</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Audience</strong>: Identify the intended audience for this analysis. (<a href="#introduction">Introduction</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Data Source</strong>: Link to the source of the data and provide a brief description of its origin. (<a href="#introduction">Introduction</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Data Dictionary</strong>: Include a link to or display the data dictionary on the webpage. (<a href="#data-dictionary">Data Dictionary</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Data Wrangling</strong>: Use at least five unique functions from the <code>dplyr</code> or <code>tidyr</code> package for data wrangling. (<a href="#data-wrangling">Data Wrangling</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Visualization</strong>: Include at least three plots, each with different <code>geom_*()</code> functions from <code>ggplot2</code> (or equivalent). (<a href="#target-variable-distribution">Target Variable Distribution</a>, <a href="#feature-distribution-by-diagnosis">Feature Distribution by Diagnosis</a>, <a href="#explained-variance-by-principal-components">Explained Variance by Principal Components</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Plot Titles and Labels</strong>: Ensure all plots have titles, subtitles, captions, and axis labels that are clear and understandable. (<a href="#target-variable-distribution">Target Variable Distribution</a>, <a href="#feature-distribution-by-diagnosis">Feature Distribution by Diagnosis</a>, <a href="#explained-variance-by-principal-components">Explained Variance by Principal Components</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Faceting</strong>: Use <code>facet_grid()</code> or <code>facet_wrap()</code> in at least one plot for segmented views. (<a href="#feature-distribution-by-diagnosis">Feature Distribution by Diagnosis</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>External Image or Table</strong>: Include at least one image or table sourced from the web or locally saved (not self-created). (<a href="#introduction">Introduction</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Callout Blocks</strong>: Include at least two distinct callout blocks to emphasize important points. (<a href="#introduction">Introduction</a>), (<a href="#data-wrangling">Data Wrangling</a>, <a href="#model-evaluation">Model Evaluation</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>References</strong>: Use a <code>.bib</code> file with at least three unique citations (e.g., data sources, methods used). (<a href="#background">Background</a>, <a href="#principal-component-analysis">Principal Component Analysis</a>, <a href="#random-forest-model-training">Random Forest Model Training</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Margin Content</strong>: Add at least one piece of margin content to enhance the analysis. (<a href="#target-variable-distribution">Target Variable Distribution</a>, <a href="#feature-distribution-by-diagnosis">Feature Distribution by Diagnosis</a>, <a href="#principal-component-analysis">Principal Component Analysis</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Summary</strong>: Conclude with a 4-6 sentence paragraph summarizing the analysis results. (<a href="#summary">Summary</a>)</label></li>
+<li><label><input type="checkbox" checked=""><strong>Function List</strong>: At the end, list each function used from <code>dplyr</code>, <code>tidyr</code>, and <code>ggplot2</code> to help verify that all requirements are met. (<a href="#functions-used">Functions Used</a>)</label></li>
 </ul>
 
 
