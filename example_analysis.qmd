@@ -32,7 +32,7 @@ library(pROC)
 
 ### Introduction
 
-This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to evaluate the **Random Forest method's performance in predicting breast cancer diagnosis** and identify key variables that distinguish between malignant and benign tumors.
+This analysis investigates the Breast Cancer Wisconsin (Diagnostic) dataset to answer the question: **How effectively can the Random Forest method predict breast cancer diagnosis, and which variables are most crucial in distinguishing between malignant and benign tumors?**
 
 The intended audience includes **medical researchers and clinicians** focused on diagnostic features that support early detection and classification of breast cancer. 
 
@@ -48,7 +48,7 @@ This analysis highlights diagnostic features in breast cancer, offering foundati
 
 ### Data Dictionary
 
-The **data dictionary** below, detailing each variable's description and relevance to the analysis, particularly in identifying differences between benign and malignant tumor characteristics.
+The **data dictionary** below, detailing each variable's description and relevance to the analysis, particularly in identifying differences between benign and malignant tumor characteristics. The original data dictionary also can be found at [UCI Machine Learning Repository](https://doi.org/10.24432/C5DW2B).
 
 | Variable                 | Description                                                                            |
 |--------------------------|----------------------------------------------------------------------------------------|
@@ -241,40 +241,44 @@ var_explained <- data.frame(
 )
 
 # Scree Plot
-ggplot(var_explained[1:10,], aes(x = Component, y = Proportion)) + 
-  geom_bar(stat = "identity", fill = "salmon") +
-  geom_line(color = "black") +
-  geom_point(color = "black") +
+ggplot(var_explained[1:10,], aes(x = Component)) + 
+  geom_bar(aes(y = Proportion), stat = "identity", fill = "salmon") +
+  geom_line(aes(y = Cumulative), color = "black") +
+  geom_point(aes(y = Cumulative), color = "black") +
   labs(
     title = "Explained Variance by Principal Components",
     subtitle = "The first few components capture the majority of variance",
-    caption = "Scree plot showing the variance explained by the first 10 components",
+    caption = "Scree plot showing the variance explained by the first 10 components and cumulative sum",
     x = "Principal Component",
     y = "Percentage of Explained Variance"
-  )
+  ) +
+  scale_y_continuous(labels = scales::percent)
 ```
 
 ::: {.column-margin}
-PCA helped identify six components explaining 88.76% of variance.
+PCA helped identify seven components explaining more than 90% of variance.
 :::
 
 ### Data Splitting
 
-The data was split into an 80:20 ratio for the training and test sets.
+The PCA-transformed data was split into an 80:20 ratio for the training and test sets.
 
 ```{r}
 #| label: data-split
 #| echo: true
 #| warning: false
+# Determine the number of components required to explain 90% of the variance
+var_explained <- cumsum((pca$sdev)^2) / sum((pca$sdev)^2)
+num_components <- which(var_explained >= 0.9)[1]
+pca_data <- as.data.frame(pca$x[, 1:num_components])
+pca_data$Diagnosis <- data$Diagnosis
+
 # Split the data into training and testing sets
 set.seed(101)
-split <- sample.split(data$Diagnosis, SplitRatio = 0.8)
-train <- subset(data, split == TRUE)
-test <- subset(data, split == FALSE)
+split <- sample.split(pca_data$Diagnosis, SplitRatio = 0.8)
+train_pca <- subset(pca_data, split == TRUE)
+test_pca <- subset(pca_data, split == FALSE)
 ```
-
-The training set has 455 samples, and the test set has 114 samples, with consistent diagnosis distribution.
-
 
 ### Random Forest Model Training
 
@@ -287,7 +291,7 @@ The Random Forest method works by constructing a large number of decision trees 
 control <- trainControl(method = "cv", number = 10)
 
 # Random Forest
-rf_model <- train(Diagnosis ~ ., data = train, method = "rf", ntree = 1000, trControl = control, importance = TRUE)
+rf_model <- train(Diagnosis ~ ., data = train_pca, method = "rf", ntree = 1000, trControl = control, importance = TRUE)
 ```
 
 ### Model Evaluation
@@ -309,7 +313,7 @@ evaluate_model <- function(model, test_data) {
   )
 }
 
-rf_results <- evaluate_model(rf_model, test)
+rf_results <- evaluate_model(rf_model, test_pca)
 rf_results
 ```
 
@@ -337,7 +341,7 @@ The analysis of the Breast Cancer Wisconsin (Diagnostic) dataset revealed that f
 - [x] **Plot Titles and Labels**: Ensure all plots have titles, subtitles, captions, and axis labels that are clear and understandable. ([Target Variable Distribution](#target-variable-distribution), [Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis), [Explained Variance by Principal Components](#explained-variance-by-principal-components))
 - [x] **Faceting**: Use `facet_grid()` or `facet_wrap()` in at least one plot for segmented views. ([Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis))
 - [x] **External Image or Table**: Include at least one image or table sourced from the web or locally saved (not self-created). ([Introduction](#introduction))
-- [x] **Callout Blocks**: Include at least two distinct callout blocks to emphasize important points. ([Introduction](#introduction)), ([Data Wrangling](#data-wrangling), [Model Evaluation](#model-evaluation))
+- [x] **Callout Blocks**: Include at least two distinct callout blocks to emphasize important points. ([Introduction](#introduction), [Data Wrangling](#data-wrangling), [Model Evaluation](#model-evaluation))
 - [x] **References**: Use a `.bib` file with at least three unique citations (e.g., data sources, methods used). ([Background](#background), [Principal Component Analysis](#principal-component-analysis), [Random Forest Model Training](#random-forest-model-training))
 - [x] **Margin Content**: Add at least one piece of margin content to enhance the analysis. ([Target Variable Distribution](#target-variable-distribution), [Feature Distribution by Diagnosis](#feature-distribution-by-diagnosis), [Principal Component Analysis](#principal-component-analysis))
 - [x] **Summary**: Conclude with a 4-6 sentence paragraph summarizing the analysis results. ([Summary](#summary))
