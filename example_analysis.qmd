@@ -168,8 +168,8 @@ This bar plot shows the distribution of benign and malignant diagnoses in the da
 
 ```{r}
 #| label: target-variable
-#| fig-height: 4
-#| fig-width: 6
+#| fig-height: 6
+#| fig-width: 10
 #| warning: false
 # Plot the distribution of tumor diagnoses
 ggplot(data, aes(x = Diagnosis, fill = Diagnosis)) +
@@ -197,7 +197,7 @@ This box plot compares the distribution of concave.points_mean and perimeter_mea
 ```{r}
 #| label: faceted-plot
 #| fig-height: 6
-#| fig-width: 8
+#| fig-width: 10
 #| warning: false
 # Compare the distribution of 'concave.points_mean' and 'perimeter_mean' across diagnoses using a box plot
 ggplot(data %>% select(Diagnosis, concave.points_mean, perimeter_mean) %>%
@@ -228,7 +228,7 @@ The dataset's dimensionality was significantly reduced using PCA, which allows t
 
 ```{r}
 #| label: pca-analysis
-#| fig-height: 8
+#| fig-height: 6
 #| fig-width: 10
 #| warning: false
 # Perform PCA for dimensionality reduction

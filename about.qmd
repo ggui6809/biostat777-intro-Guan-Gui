@@ -3,52 +3,45 @@ title: "About"
 format: html
 ---
 
-# About Guan Gui
+# Introduction
 
 I am currently an ScM student in Biostatistics at Johns Hopkins Bloomberg School of Public Health, following my completion of a first-class honours degree in Data Science at the University of Sydney. My research interests span biostatistics, spatial genomics, and machine learning, with a focus on analyzing and deriving insights from complex data.
 
 ## Education
 
-- **Master of Science in Biostatistics (ScM)**  
-  Johns Hopkins Bloomberg School of Public Health  
-  <span style="float: right;">Sep. 2024 - Present</span>  
-  Baltimore, MD
+- **Master of Science in Biostatistics (ScM)** <span style="float: right; text-align: right;">Sep. 2024 - Present  
+  📍 Baltimore, MD</span>  
+  *Johns Hopkins Bloomberg School of Public Health*
 
-- **Bachelor of Science (Honours) in Data Science**  
-  University of Sydney  
-  <span style="float: right;">Mar. 2021 - Jul. 2024</span>  
-  Sydney, Australia  
+- **Bachelor of Science (Honours) in Data Science** <span style="float: right; text-align: right;">Mar. 2021 - Jul. 2024  
+  📍 Sydney, Australia</span>  
+  *University of Sydney*  
   Graduated with First Class Honours  
-  *Awards*: Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship  
+  **Awards:** Vice Chancellor’s Global Mobility Scholarship, Dalyell Scholar, Charles Perkins Centre Summer Research Scholarship  
 
-- **Semester Exchange**  
-  National University of Singapore  
-  <span style="float: right;">Aug. 2022 - Dec. 2022</span>  
-  Singapore
+- **Semester Exchange** <span style="float: right; text-align: right;">Aug. 2022 - Dec. 2022  
+  📍 Singapore</span>  
+  *National University of Singapore*
 
-- **Summer & Winter Schools**  
-  Shanghai Jiao Tong University  
-  <span style="float: right;">Dec. 2021, Jul. 2022</span>  
-  Shanghai, China
+- **Summer & Winter Schools** <span style="float: right; text-align: right;">Dec. 2021, Jul. 2022  
+  📍 Shanghai, China</span>  
+  *Shanghai Jiao Tong University*
 
 ## Research and Professional Experience
 
-- **SpatialFeatures Project**  
+- **SpatialFeatures Project** <span style="float: right; text-align: right;">Jul. 2023 - Present  
+  📍 Sydney, Australia</span>  
   *University of Sydney*  
-  <span style="float: right;">Jul. 2023 - Present</span>  
   Developed the "SpatialFeatures" algorithm to analyze spatial genomics data at cellular and sub-cellular levels, creating a versatile R package for use across genomics datasets.
 
-
-- **Data Analyst Intern**  
+- **Data Analyst Intern** <span style="float: right; text-align: right;">Jan. - May 2022  
+  📍 Shanghai, China</span>  
   *DiAct Technology Co., Ltd. (Ipsos)*  
-  <span style="float: right;">Jan. - May 2022</span>  
-  Shanghai, China  
   Analyzed social media data for automotive trends, improving data processing by 30% through Python optimizations.
 
-- **User Growth Intern**  
+- **User Growth Intern** <span style="float: right; text-align: right;">Jul. - Oct. 2021  
+  📍 Beijing, China</span>  
   *JD.com*  
-  <span style="float: right;">Jul. - Oct. 2021</span>  
-  Beijing, China  
   Enhanced SQL processes and developed metrics for improved user engagement recommendations.
 
 ## Skills
