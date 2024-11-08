@@ -1,0 +1,12 @@
+{
+  "hash": "d82ca4385253d07047c11dee4031b5c7",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Part 3: Command Line Operations on students.csv\"\nformat: html\n---\n\n\n\n\n## Command Line Solutions\n\n### 1. Download the `students.csv` file\n\nTo download the `students.csv` file from the provided GitHub URL, use the `wget` command:\n\n\n\n\n```{bash}\nwhich wget\nrm -f students.csv\n/opt/homebrew/bin/wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/main/projects/01-project/students.csv\n```\n\n\n\n\n### 2. Display the contents of the `students.csv` file using the `cat` command\n\n\n\n\n```{bash}\ncat students.csv\n```\n\n\n\n\n### 3. Display only the first 5 lines of the file using `head` to show the first few lines\n\n\n\n\n```{bash}\nhead -n 5 students.csv\n```\n\n\n\n\n### 4. Display only the last 3 lines of the file using `tail` to show the last few lines\n\n\n\n\n```{bash}\ntail -n 3 students.csv\n```\n\n\n\n\n### 5. Count the number of lines in the file using the `wc` command\n\n\n\n\n```{bash}\nwc -l students.csv\n```\n\n\n\n\n### 6. Find all students who are taking “Math” as a subject using `grep`\n\n\n\n\n```{bash}\ngrep \"Math\" students.csv\n```\n\n\n\n\n### 7. Find all female students using `grep` or `awk` to filter based on gender\n\nUsing `grep`:\n\n\n\n\n```{bash}\ngrep \",F,\" students.csv\n```\n\n\n\n\n### 8. Sort the file by the students’ ages in ascending order using `sort`\n\n\n\n\n```{bash}\nsort -t \",\" -k3,3n students.csv\n```\n\n\n\n\n### 9. Find the unique subjects listed in the file using `cut`, `sort`, and `uniq`\n\n\n\n\n```{bash}\ncut -d \",\" -f6 students.csv | sort | uniq\n```\n\n\n\n\n### 10. Calculate the average grade of the students using `awk`\n\n\n\n\n```{bash}\nawk -F \",\" '{sum+=$5} END {print \"Average Grade:\", sum/(NR-1)}' students.csv\n```\n\n\n\n\n### 11. Replace all occurrences of “Math” with “Mathematics” in the file using `sed`\n\nTo make an in-place replacement:\n\n\n\n\n```{bash}\nsed -i '' 's/Math/Mathematics/g' students.csv\n```\n\n\n\n\n### 12. Display the final `students.csv` file\n\n\n\n```{bash}\ncat students.csv\n```\n\n",
+    "supporting": [
+      "part3_files/figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
