@@ -6,8 +6,6 @@ format:
     number-sections: true
     fig-cap: true
     df-print: paged
-    code-fold: true
-    code-summary: "Show code"
     highlight-style: tango
 bibliography: "references.bib"
 ---
